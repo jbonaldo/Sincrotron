@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectDescription>
+	<name>CortexM3</name>
+	<comment></comment>
+	<projects>
+	</projects>
+	<buildSpec>
+		<buildCommand>
+			<name>org.eclipse.cdt.managedbuilder.core.genmakebuilder</name>
+			<arguments>
+			</arguments>
+		</buildCommand>
+	</buildSpec>
+	<natures>
+		<nature>org.eclipse.cdt.core.cnature</nature>
+		<nature>org.eclipse.cdt.managedbuilder.core.managedBuildNature</nature>
+		<nature>org.eclipse.cdt.core.ccnature</nature>
+		<nature>com.ti.ccstudio.managedbuild.core.ccsNature</nature>
+	</natures>
+	<linkedResources>
+		<link>
+			<name>driverlib.lib</name>
+			<type>1</type>
+			<location>C:/TI/controlSUITE/device_support/f28m35x/v130/MWare/driverlib/ccs/Debug/driverlib.lib</location>
+		</link>
+		<link>
+			<name>utils/uartstdio.c</name>
+			<type>1</type>
+			<locationURI>INSTALLROOT_F28M35X_V130/MWare/utils/uartstdio.c</locationURI>
+		</link>
+		<link>
+			<name>utils/ustdlib.c</name>
+			<type>1</type>
+			<locationURI>INSTALLROOT_F28M35X_V130/MWare/utils/ustdlib.c</locationURI>
+		</link>
+	</linkedResources>
+</projectDescription>

@@ -1,0 +1,54 @@
+
+
+
+
+Funcionamento Autônomo (via Flash sem emulador)
+
+sw3:
+TRST = OFF
+
+
+sw1:
+1 = OFF
+2 = OFF
+3 = OFF
+4 = 0FF
+
+
+
+FUNCIONAMENTO COM DEBUG CONECTAD
+
+SW3:
+TRST = ON
+RS   = ON
+
+sw1:
+1 = OFF
+2 = OFF
+3 = OFF
+4 = 0FF
+
+
+Energizar a placa: pela dockstation ou pela miniUsb.
+Ligar o emulador pela porta usb presente no controlCard (usb próxima ao chip FTDI)
+
+
+Carregar programa M3
+Carregar programa C28
+Resetar e restartar c28
+Resetar e restartar M3
+Rodar M3
+Rodar C28
+
+
+
+
+
+
+Configuração do Projeto
+
+Adicionar o arquivo "F28M35x_CodeStartBranch.asm"
+Adicionar a diretiva "code_start" nas propriedades do projeto:
+    c2000_linker
+    symbol management
+    specify program entry point ...
