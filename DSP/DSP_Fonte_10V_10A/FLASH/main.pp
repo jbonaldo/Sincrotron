@@ -34,7 +34,8 @@ main.obj: C:/Arquivos/Doutorado/Sincrotron/Implementacao/DSP/F28M35x_common/incl
 main.obj: C:/Arquivos/Doutorado/Sincrotron/Implementacao/DSP/F28M35x_common/include/F28M35x_DefaultISR.h
 main.obj: ../app_libs/includes/gpio_config.h
 main.obj: ../app_libs/includes/pwm_config.h
-main.obj: ../app_libs/includes/adc_config.h
+main.obj: ../app_libs/includes/adc.h
+main.obj: ../app_libs/includes/ad7634.h
 main.obj: ../app_libs/includes/controller_pi.h
 main.obj: ../app_libs/includes/shared_mem.h
 main.obj: ../app_libs/includes/iir_filter.h
@@ -76,7 +77,8 @@ C:/Arquivos/Doutorado/Sincrotron/Implementacao/DSP/F28M35x_common/include/F28M35
 C:/Arquivos/Doutorado/Sincrotron/Implementacao/DSP/F28M35x_common/include/F28M35x_DefaultISR.h: 
 ../app_libs/includes/gpio_config.h: 
 ../app_libs/includes/pwm_config.h: 
-../app_libs/includes/adc_config.h: 
+../app_libs/includes/adc.h: 
+../app_libs/includes/ad7634.h: 
 ../app_libs/includes/controller_pi.h: 
 ../app_libs/includes/shared_mem.h: 
 ../app_libs/includes/iir_filter.h: 

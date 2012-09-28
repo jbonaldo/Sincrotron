@@ -5,16 +5,16 @@
 <booleanAttribute key="org.eclipse.debug.ui.ATTR_LAUNCH_IN_BACKGROUND" value="false"/>
 <mapAttribute key="com.ti.ccstudio.debug.core.VARIABLE_STATE"/>
 <stringAttribute key="org.eclipse.debug.core.source_locator_id" value="com.ti.ccstudio.debug.core.sourceLocator"/>
-<stringAttribute key="CCEDebugOptions.CPU_NAME" value="Texas Instruments XDS100v2 USB Emulator_0/Cortex_M3_0"/>
+<stringAttribute key="CCEDebugOptions.CPU_NAME" value="Texas Instruments XDS100v2 USB Emulator_0/C28xx_0"/>
 <stringAttribute key="CCEDebugOptions.DEBUG_PROPERTIES.Texas Instruments XDS100v2 USB Emulator_0/Cortex_M3_0" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;no&quot; ?&gt;&#10;&lt;PropertyValues&gt;&#10;&#10;  &lt;property id=&quot;ConnectOnStartup&quot;&gt;&#10;    &lt;curValue&gt;1&lt;/curValue&gt;&#10;  &lt;/property&gt;&#10;&#10;&lt;/PropertyValues&gt;&#10;"/>
 <stringAttribute key="org.eclipse.debug.core.source_locator_memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;no&quot;?&gt;&#13;&#10;&lt;sourceLookupDirector&gt;&#13;&#10;&lt;sourceContainers duplicates=&quot;false&quot;&gt;&#13;&#10;&lt;container memento=&quot;&amp;lt;?xml version=&amp;quot;1.0&amp;quot; encoding=&amp;quot;UTF-8&amp;quot; standalone=&amp;quot;no&amp;quot;?&amp;gt;&amp;#13;&amp;#10;&amp;lt;default/&amp;gt;&amp;#13;&amp;#10;&quot; typeId=&quot;org.eclipse.debug.core.containerType.default&quot;/&gt;&#13;&#10;&lt;/sourceContainers&gt;&#13;&#10;&lt;/sourceLookupDirector&gt;&#13;&#10;"/>
 <stringAttribute key="org.eclipse.cdt.launch.DEBUGGER_ID" value="com.ti.ccstudio.debug.core.CCEDebugger"/>
 <stringAttribute key="com.ti.ccstudio.debug.core.DISPLAY_NAME_FORMAT" value="DSP_Fonte_10V_10A [FLASH] - {0}"/>
-<stringAttribute key="CCEDebugOptions.CPU_ISA" value="Cortex_M3"/>
+<stringAttribute key="CCEDebugOptions.CPU_ISA" value="TMS320C28XX"/>
 <stringAttribute key="org.eclipse.cdt.launch.DEBUGGER_START_MODE" value="run"/>
-<stringAttribute key="com.ti.ccstudio.debug.core.MRU_PROGRAM_NAME" value="E:\Doutorado\Sincrotron\Implementacao\DSP\DSP_Fonte_10V_10A\FLASH\DSP_Fonte_10V_10A.out"/>
+<stringAttribute key="com.ti.ccstudio.debug.core.MRU_PROGRAM_NAME" value="C:\Arquivos\Doutorado\Sincrotron\Implementacao\DSP\DSP_Fonte_10V_10A\FLASH\DSP_Fonte_10V_10A.out"/>
 <stringAttribute key="org.eclipse.cdt.launch.PROGRAM_NAME" value="FLASH/DSP_Fonte_10V_10A.out"/>
-<stringAttribute key="com.ti.ccstudio.debug.core.MRU_MODULES" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;no&quot;?&gt;&#13;&#10;&lt;modules&gt;&#13;&#10;&lt;module name=&quot;E:\Doutorado\Sincrotron\Implementacao\DSP\DSP_Fonte_10V_10A\FLASH\DSP_Fonte_10V_10A.out&quot; time=&quot;Fri May 25 14:43:43 BRT 2012&quot; time_long=&quot;1337967823531&quot;/&gt;&#13;&#10;&lt;/modules&gt;&#13;&#10;"/>
+<stringAttribute key="com.ti.ccstudio.debug.core.MRU_MODULES" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;no&quot;?&gt;&#13;&#10;&lt;modules&gt;&#13;&#10;&lt;module name=&quot;E:\Doutorado\Sincrotron\Implementacao\DSP\DSP_Fonte_10V_10A\FLASH\DSP_Fonte_10V_10A.out&quot; time=&quot;Fri May 25 14:43:43 BRT 2012&quot; time_long=&quot;1337967823531&quot;/&gt;&#13;&#10;&lt;module name=&quot;C:\Arquivos\Doutorado\Sincrotron\Implementacao\DSP\DSP_Fonte_10V_10A\FLASH\DSP_Fonte_10V_10A.out&quot; time=&quot;Tue Sep 25 13:10:32 BRT 2012&quot; time_long=&quot;1348589432199&quot;/&gt;&#13;&#10;&lt;/modules&gt;&#13;&#10;"/>
 <stringAttribute key="CCEDebugOptions.TARGET_CONFIGURATION_OPTION" value="full"/>
 <stringAttribute key="CCEDebugOptions.TARGET_CONFIGURATION_FILE" value="C:/Arquivos/Doutorado/Sincrotron/Implementacao/CortexM3/CortexM3.ccxml"/>
 <stringAttribute key="org.eclipse.cdt.launch.PROJECT_ATTR" value="DSP_Fonte_10V_10A"/>

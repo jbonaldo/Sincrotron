@@ -1,9 +1,9 @@
 ******************************************************************************
   TMS320C2000 Evaluation Linker PC v6.0.1                      
 ******************************************************************************
->> Linked Fri Sep 28 14:49:56 2012
+>> Linked Fri Sep 28 13:06:38 2012
 
-OUTPUT FILE NAME:   <DSP_Fonte_10V_10A.out>
+OUTPUT FILE NAME:   <DSP_FAP.out>
 ENTRY POINT SYMBOL: "code_start"  address: 0013fff0
 
 
@@ -12,14 +12,14 @@ MEMORY CONFIGURATION
          name            origin    length      used     unused   attr    fill
 ----------------------  --------  ---------  --------  --------  ----  --------
 PAGE 0:
-  RAML0                 00008000   00001000  000002a4  00000d5c  RWIX
+  RAML0                 00008000   00001000  0000029e  00000d62  RWIX
   RAML1                 00009000   00001000  00000000  00001000  RWIX
   FLASHG                00120000   00008000  00000000  00008000  RWIX
   FLASHF                00128000   00008000  00000000  00008000  RWIX
   FLASHE                00130000   00008000  00000000  00008000  RWIX
-  FLASHD                00138000   00002000  000002a4  00001d5c  RWIX
+  FLASHD                00138000   00002000  0000029e  00001d62  RWIX
   FLASHC                0013a000   00002000  00000000  00002000  RWIX
-  FLASHA                0013e000   00001f80  00001479  00000b07  RWIX
+  FLASHA                0013e000   00001f80  0000148e  00000af2  RWIX
   CSM_RSVD              0013ff80   00000070  00000000  00000070  RWIX
   BEGIN                 0013fff0   00000002  00000002  00000000  RWIX
   FLASH_EXE_ONLY_P0     0013fff2   00000002  00000000  00000002  RWIX
@@ -129,55 +129,55 @@ GETWRITEIDX
 PUTREADIDX 
 *          0    0003fc00    00000000     DSECT
 
-ramfuncs   0    00138000    000002a4     RUN ADDR = 00008000
-                  00138000    000000e2     controller_pi.obj (ramfuncs)
-                  001380e2    000000bf     main.obj (ramfuncs:retain)
-                  001381a1    00000079     main.obj (ramfuncs)
-                  0013821a    00000049     pwm_config.obj (ramfuncs)
-                  00138263    0000003d     F28M35x_SysCtrl.obj (ramfuncs)
-                  001382a0    00000004     F28M35x_usDelay.obj (ramfuncs)
+ramfuncs   0    00138000    0000029e     RUN ADDR = 00008000
+                  00138000    000000dc     controller_pi.obj (ramfuncs)
+                  001380dc    000000bf     main.obj (ramfuncs:retain)
+                  0013819b    00000079     main.obj (ramfuncs)
+                  00138214    00000049     pwm_config.obj (ramfuncs)
+                  0013825d    0000003d     F28M35x_SysCtrl.obj (ramfuncs)
+                  0013829a    00000004     F28M35x_usDelay.obj (ramfuncs)
 
-.text      0    0013e000    000012c9     
+.text      0    0013e000    000012de     
                   0013e000    0000040b     F28M35x_Adc.obj (.text)
                   0013e40b    0000035f     F28M35x_DefaultIsr.obj (.text:retain)
-                  0013e76a    0000028c     pwm_config.obj (.text)
-                  0013e9f6    00000140     SFO_TI_Build_V7_FPU.lib : SFO_v7_fpu_lib_build_c28.obj (.text)
-                  0013eb36    00000105     F28M35x_SysCtrl.obj (.text)
-                  0013ec3b    000000f8     iir_filter.obj (.text)
-                  0013ed33    000000ed     F28M35x_Mcbsp.obj (.text)
-                  0013ee20    00000088     rts2800_fpu32.lib : fs_div.obj (.text)
-                  0013eea8    0000007d     main.obj (.text)
-                  0013ef25    0000007c     F28M35x_CpuTimers.obj (.text)
-                  0013efa1    0000006d     ad7634.obj (.text)
-                  0013f00e    0000006d     main.obj (.text:retain)
-                  0013f07b    00000046     controller_pi.obj (.text)
-                  0013f0c1    00000046     rts2800_fpu32.lib : boot.obj (.text)
-                  0013f107    00000044     adc.obj (.text)
-                  0013f14b    00000040     adc_config.obj (.text)
-                  0013f18b    0000003e     gpio_config.obj (.text)
-                  0013f1c9    0000002d     F28M35x_PieCtrl.obj (.text)
-                  0013f1f6    0000002a     rts2800_fpu32.lib : l_div.obj (.text)
-                  0013f220    00000024     F28M35x_Gpio.obj (.text)
-                  0013f244    00000021     rts2800_fpu32.lib : memcpy_ff.obj (.text)
-                  0013f265    00000020     F28M35x_PieVect.obj (.text)
-                  0013f285    00000019     rts2800_fpu32.lib : args_main.obj (.text)
-                  0013f29e    00000019                       : exit.obj (.text)
-                  0013f2b7    00000009                       : _lock.obj (.text)
-                  0013f2c0    00000009     shared_mem.obj (.text)
+                  0013e76a    000002a1     pwm_config.obj (.text)
+                  0013ea0b    00000140     SFO_TI_Build_V7_FPU.lib : SFO_v7_fpu_lib_build_c28.obj (.text)
+                  0013eb4b    00000105     F28M35x_SysCtrl.obj (.text)
+                  0013ec50    000000f8     iir_filter.obj (.text)
+                  0013ed48    000000ed     F28M35x_Mcbsp.obj (.text)
+                  0013ee35    00000088     rts2800_fpu32.lib : fs_div.obj (.text)
+                  0013eebd    0000007d     main.obj (.text)
+                  0013ef3a    0000007c     F28M35x_CpuTimers.obj (.text)
+                  0013efb6    0000006d     ad7634.obj (.text)
+                  0013f023    0000006d     main.obj (.text:retain)
+                  0013f090    00000046     controller_pi.obj (.text)
+                  0013f0d6    00000046     rts2800_fpu32.lib : boot.obj (.text)
+                  0013f11c    00000044     adc.obj (.text)
+                  0013f160    00000040     adc_config.obj (.text)
+                  0013f1a0    0000003e     gpio_config.obj (.text)
+                  0013f1de    0000002d     F28M35x_PieCtrl.obj (.text)
+                  0013f20b    0000002a     rts2800_fpu32.lib : l_div.obj (.text)
+                  0013f235    00000024     F28M35x_Gpio.obj (.text)
+                  0013f259    00000021     rts2800_fpu32.lib : memcpy_ff.obj (.text)
+                  0013f27a    00000020     F28M35x_PieVect.obj (.text)
+                  0013f29a    00000019     rts2800_fpu32.lib : args_main.obj (.text)
+                  0013f2b3    00000019                       : exit.obj (.text)
+                  0013f2cc    00000009                       : _lock.obj (.text)
+                  0013f2d5    00000009     shared_mem.obj (.text)
 
-.econst    0    0013f2ca    00000100     
-                  0013f2ca    00000100     F28M35x_PieVect.obj (.econst)
+.econst    0    0013f2de    00000100     
+                  0013f2de    00000100     F28M35x_PieVect.obj (.econst)
 
-.cinit     0    0013f3ca    000000b0     
-                  0013f3ca    0000003e     main.obj (.cinit)
-                  0013f408    00000032     pwm_config.obj (.cinit)
-                  0013f43a    00000013     adc.obj (.cinit)
-                  0013f44d    0000000f     iir_filter.obj (.cinit)
-                  0013f45c    0000000a     rts2800_fpu32.lib : _lock.obj (.cinit)
-                  0013f466    0000000a                       : exit.obj (.cinit)
-                  0013f470    00000004     SFO_TI_Build_V7_FPU.lib : SFO_v7_fpu_lib_build_c28.obj (.cinit)
-                  0013f474    00000004     controller_pi.obj (.cinit)
-                  0013f478    00000002     --HOLE-- [fill = 0]
+.cinit     0    0013f3de    000000b0     
+                  0013f3de    0000003e     main.obj (.cinit)
+                  0013f41c    00000032     pwm_config.obj (.cinit)
+                  0013f44e    00000013     adc.obj (.cinit)
+                  0013f461    0000000f     iir_filter.obj (.cinit)
+                  0013f470    0000000a     rts2800_fpu32.lib : _lock.obj (.cinit)
+                  0013f47a    0000000a                       : exit.obj (.cinit)
+                  0013f484    00000004     SFO_TI_Build_V7_FPU.lib : SFO_v7_fpu_lib_build_c28.obj (.cinit)
+                  0013f488    00000004     controller_pi.obj (.cinit)
+                  0013f48c    00000002     --HOLE-- [fill = 0]
 
 codestart 
 *          0    0013fff0    00000002     
@@ -486,12 +486,12 @@ GLOBAL SYMBOLS: SORTED ALPHABETICALLY BY Name
 address    name
 --------   ----
 0013e000   .text
-0013f29e   C$$EXIT
-0013ee20   FS$$DIV
-0013f1f6   L$$DIV
-0013f205   L$$MOD
-0013f213   UL$$DIV
-0013f21a   UL$$MOD
+0013f2b3   C$$EXIT
+0013ee35   FS$$DIV
+0013f20b   L$$DIV
+0013f21a   L$$MOD
+0013f228   UL$$DIV
+0013f22f   UL$$MOD
 0013e4c9   _ADCINT1_ISR
 0013e4d3   _ADCINT2_ISR
 0013e69f   _ADCINT3_ISR
@@ -523,16 +523,16 @@ address    name
 0013e70d   _CFLSINGERR_ISR
 0013e72b   _CRAMACCVIOL_ISR
 0013e721   _CRAMSINGERR_ISR
-0013ec17   _CSMSecurityStatus
+0013ec2c   _CSMSecurityStatus
 00006400   _Comp1Regs
 00006420   _Comp2Regs
 00006440   _Comp3Regs
 00006460   _Comp4Regs
 00006480   _Comp5Regs
 000064a0   _Comp6Regs
-0013f14b   _ConfigAdc1
-0013ef66   _ConfigCpuTimer
-0013efa1   _ConfigMcbspaSPIMaster
+0013f160   _ConfigAdc1
+0013ef7b   _ConfigCpuTimer
+0013efb6   _ConfigMcbspaSPIMaster
 0000aea0   _CpuTimer0
 00000c00   _CpuTimer0Regs
 0000ae90   _CpuTimer1
@@ -541,7 +541,7 @@ address    name
 00000c10   _CpuTimer2Regs
 0013fff8   _CsmPwl
 00000ae0   _CsmRegs
-0013ebc4   _CsmUnlock
+0013ebd9   _CsmUnlock
 00004e00   _CtoMIpcRegs
 0013e41f   _DATALOG_ISR
 0013e63b   _DINTCH1_ISR
@@ -550,7 +550,7 @@ address    name
 0013e659   _DINTCH4_ISR
 0013e663   _DINTCH5_ISR
 0013e66d   _DINTCH6_ISR
-000082a0   _DSP28x_usDelay
+0000829a   _DSP28x_usDelay
 0000a810   _DebugErro_di_dt
 00000880   _DevEmuRegs
 00001000   _DmaRegs
@@ -560,7 +560,7 @@ address    name
 0013e5c3   _ECAP4_INT_ISR
 0013e5cd   _ECAP5_INT_ISR
 0013e5d7   _ECAP6_INT_ISR
-0013ec29   _ECSLSecurityStatus
+0013ec3e   _ECSLSecurityStatus
 00005a00   _ECap1Regs
 00005a20   _ECap2Regs
 00005a40   _ECap3Regs
@@ -603,16 +603,16 @@ address    name
 00005b40   _EQep2Regs
 00005b80   _EQep3Regs
 0013fff4   _EcslPwl
-0013ebe5   _EcslUnlock
-0013f1ed   _EnableInterrupts
+0013ebfa   _EcslUnlock
+0013f202   _EnableInterrupts
 0000a840   _FlagAq
 0000a842   _FlagCalib
 00004000   _FlashCtrlRegs
 00004300   _FlashEccRegs
 0013fff2   _FlashExeOnly
-00008288   _FlashGainPump
-00008295   _FlashLeavePump
-0013ec04   _GetEXEstatus
+00008282   _FlashGainPump
+0000828f   _FlashLeavePump
+0013ec19   _GetEXEstatus
 00005f80   _GpioCtrlRegs
 00005fc0   _GpioDataRegs
 00005f80   _GpioG1CtrlRegs
@@ -637,34 +637,34 @@ address    name
 0013e210   _InitAdc2
 0013e224   _InitAdc2Aio
 0013e1fe   _InitAdcAio
-0013ef1a   _InitControllers
-0013ef25   _InitCpuTimers
-0013e9ac   _InitEPwm1Gpio
-0013e9ba   _InitEPwm2Gpio
-0013e9c8   _InitEPwm3Gpio
-0013e9d8   _InitEPwm4Gpio
-0013e9e8   _InitEPwm5Gpio
-0013e9a1   _InitEPwmGpio
-00008263   _InitFlash
-0013f220   _InitGpio
-0013ed33   _InitMcbsp
-0013edc3   _InitMcbspGpio
-0013ed36   _InitMcbspa
-0013ed8c   _InitMcbspa12bit
-0013ed97   _InitMcbspa16bit
-0013eda2   _InitMcbspa20bit
-0013edad   _InitMcbspa24bit
-0013edb8   _InitMcbspa32bit
-0013ed85   _InitMcbspa8bit
-0013edc6   _InitMcbspaGpio
-0013ed76   _InitMcbspaInt
-0013eb68   _InitPeripheralClocks
-0013f1c9   _InitPieCtrl
-0013f265   _InitPieVectTable
-0013eb36   _InitSysCtrl
+0013ef2f   _InitControllers
+0013ef3a   _InitCpuTimers
+0013e9c1   _InitEPwm1Gpio
+0013e9cf   _InitEPwm2Gpio
+0013e9dd   _InitEPwm3Gpio
+0013e9ed   _InitEPwm4Gpio
+0013e9fd   _InitEPwm5Gpio
+0013e9b6   _InitEPwmGpio
+0000825d   _InitFlash
+0013f235   _InitGpio
+0013ed48   _InitMcbsp
+0013edd8   _InitMcbspGpio
+0013ed4b   _InitMcbspa
+0013eda1   _InitMcbspa12bit
+0013edac   _InitMcbspa16bit
+0013edb7   _InitMcbspa20bit
+0013edc2   _InitMcbspa24bit
+0013edcd   _InitMcbspa32bit
+0013ed9a   _InitMcbspa8bit
+0013eddb   _InitMcbspaGpio
+0013ed8b   _InitMcbspaInt
+0013eb7d   _InitPeripheralClocks
+0013f1de   _InitPieCtrl
+0013f27a   _InitPieVectTable
+0013eb4b   _InitSysCtrl
 0013e73f   _LUF_ISR
 0013e735   _LVF_ISR
-0013ebfc   _LockDevice
+0013ec11   _LockDevice
 00004400   _M3PllRegs
 0000a832   _MEP_SF
 0000a000   _MEP_ScaleFactor
@@ -674,7 +674,7 @@ address    name
 0013e6ef   _MTOCIPC_INT3_ISR
 0013e6f9   _MTOCIPC_INT4_ISR
 0013e631   _MXINTA_ISR
-000080e2   _Mcbsp_RxINTA_ISR
+000080dc   _Mcbsp_RxINTA_ISR
 00005000   _McbspaRegs
 0013e43d   _NMI_ISR
 00007060   _NmiIntruptRegs
@@ -683,16 +683,16 @@ address    name
 00000ce0   _PieCtrlRegs
 00000d00   _PieVectTable
 00000e00   _PieVectTableCopy
-0013f2ca   _PieVectTableInit
+0013f2de   _PieVectTableInit
 00004a00   _RAMErrRegs
 00004900   _RAMRegs
 0013e429   _RTOSINT_ISR
-000002a4   _RamfuncsLoadSize
+0000029e   _RamfuncsLoadSize
 00138000   _RamfuncsLoadStart
 00008000   _RamfuncsRunStart
 0013e68b   _SCIRXINTA_ISR
 0013e695   _SCITXINTA_ISR
-0013e9f6   _SFO
+0013ea0b   _SFO
 0000a831   _SFO_CAL
 0013e613   _SPIRXINTA_ISR
 0013e61d   _SPITXINTA_ISR
@@ -722,98 +722,98 @@ address    name
 00000001   __TI_args_main
 ffffffff   ___binit__
 ffffffff   ___c_args__
-0013f3ca   ___cinit__
-0013f2c9   ___etext__
-0013f244   ___memcpy_ff
+0013f3de   ___cinit__
+0013f2de   ___etext__
+0013f259   ___memcpy_ff
 ffffffff   ___pinit__
 0013e000   ___text__
-0013f285   __args_main
+0013f29a   __args_main
 0000aec4   __cleanup_ptr
 0000aec6   __dtors_ptr
 0000aec2   __lock
-0013f2bf   __nop
-0013f2bb   __register_lock
-0013f2b7   __register_unlock
+0013f2d4   __nop
+0013f2d0   __register_lock
+0013f2cc   __register_unlock
 00000050   __stack
 0000aec0   __unlock
-0013f29e   _abort
-0013f00b   _ad7634_config
-0013f00e   _adc1_isr
-0013f107   _adc_calib
-0013f11e   _adc_config_constants
+0013f2b3   _abort
+0013f020   _ad7634_config
+0013f023   _adc1_isr
+0013f11c   _adc_calib
+0013f133   _adc_config_constants
 0000a850   _adc_resolution
-0013f0c1   _c_int00
-0013ee0a   _clkg_delay_loop
+0013f0d6   _c_int00
+0013ee1f   _clkg_delay_loop
 0000a84a   _cnt
 0000aeb2   _coefs
 0000a844   _count_int
-0013f060   _cpu_timer2_isr
-0013edf4   _delay_loop
+0013f075   _cpu_timer2_isr
+0013ee09   _delay_loop
 0000a845   _dummy_count
 0000a84c   _duty_dac_pwm
 0000a856   _duty_force
 0000a00c   _ePWM
-0000815a   _epwm1_timer_isr
+00008154   _epwm1_timer_isr
 0000a006   _epwm_base_duty
 0000a004   _epwm_test_inc
 0000a00a   _epwm_test_steps
-0013f2a0   _exit
+0013f2b5   _exit
 0000a846   _flag_force
-0013f18b   _gpio_config
+0013f1a0   _gpio_config
 0000a848   _i
 0000a858   _i_pu
 0000a818   _i_ref
-0013ec62   _iir_cascade
-0013ec3b   _iir_filters_init
+0013ec77   _iir_cascade
+0013ec50   _iir_filters_init
 0000aeac   _iir_in
-0013ecc8   _iir_parallel
+0013ecdd   _iir_parallel
 0000ad00   _inVectFilt
 0000ab40   _inVectPu
 0000a85a   _in_filtered
 0000a847   _index
-0013eed7   _interrupts_enable_periph_ints
-0013eee6   _interrupts_remap
+0013eeec   _interrupts_enable_periph_ints
+0013eefb   _interrupts_remap
 0000a002   _j
-0013eea8   _main
+0013eebd   _main
 0000a812   _out
-0013ef01   _peripheral_init
+0013ef16   _peripheral_init
 0000a980   _piOutVect
 00008000   _pi_controller
-0013f07b   _pi_controller_init
+0013f090   _pi_controller_init
 0000a81e   _pi_io
-0013f0b8   _pi_set_ref
+0013f0cd   _pi_set_ref
 0013e78c   _pwm1_config
 0013e80b   _pwm2_config
 0013e86d   _pwm3_config
-0013e8ba   _pwm4_config
-0013e908   _pwm5_config
+0013e8cf   _pwm4_config
+0013e91d   _pwm5_config
 0000a040   _pwmDebugHR_duty_fract
 0000a008   _pwmDebugHRcount
 0013e76a   _pwm_config
-0013e993   _pwm_mep_sfo_init
-0013e98c   _pwm_mep_sfo_tunning
-0013e974   _pwm_output_disable
-0013e980   _pwm_output_enable
-0013e929   _pwm_period_calculation
-0000821a   _pwm_set_duty
-0000808e   _rate_limiter
-000081a1   _rotina_controle
+0013e9a8   _pwm_mep_sfo_init
+0013e9a1   _pwm_mep_sfo_tunning
+0013e989   _pwm_output_disable
+0013e995   _pwm_output_enable
+0013e93e   _pwm_period_calculation
+00008214   _pwm_set_duty
+00008088   _rate_limiter
+0000819b   _rotina_controle
 0013e760   _rsvd_ISR
-0013f2c0   _shared_mem_init
+0013f2d5   _shared_mem_init
 0000c000   _shm_c2m_write
 0000e000   _shm_m2c_read
-000081df   _swi
+000081d9   _swi
 0000a85c   _temp
 0000a843   _temp_comp
-0013e94a   _teste_hrpwm
+0013e95f   _teste_hrpwm
 0000a880   _vect_in
 0000aea8   _w
-0013f1ad   _xInt_Config
-00008143   _xint2_isr
+0013f1c2   _xInt_Config
+0000813d   _xint2_isr
 ffffffff   binit
-0013f3ca   cinit
+0013f3de   cinit
 0013fff0   code_start
-0013f2c9   etext
+0013f2de   etext
 ffffffff   pinit
 
 
@@ -823,7 +823,7 @@ address    name
 --------   ----
 00000001   __TI_args_main
 00000050   __stack
-000002a4   _RamfuncsLoadSize
+0000029e   _RamfuncsLoadSize
 00000300   __STACK_SIZE
 00000350   __STACK_END
 00000880   _DevEmuRegs
@@ -889,17 +889,17 @@ address    name
 00007900   _I2caRegs
 00008000   _RamfuncsRunStart
 00008000   _pi_controller
-0000808e   _rate_limiter
-000080e2   _Mcbsp_RxINTA_ISR
-00008143   _xint2_isr
-0000815a   _epwm1_timer_isr
-000081a1   _rotina_controle
-000081df   _swi
-0000821a   _pwm_set_duty
-00008263   _InitFlash
-00008288   _FlashGainPump
-00008295   _FlashLeavePump
-000082a0   _DSP28x_usDelay
+00008088   _rate_limiter
+000080dc   _Mcbsp_RxINTA_ISR
+0000813d   _xint2_isr
+00008154   _epwm1_timer_isr
+0000819b   _rotina_controle
+000081d9   _swi
+00008214   _pwm_set_duty
+0000825d   _InitFlash
+00008282   _FlashGainPump
+0000828f   _FlashLeavePump
+0000829a   _DSP28x_usDelay
 0000a000   _MEP_ScaleFactor
 0000a001   _Periodo_ticks
 0000a002   _j
@@ -1061,87 +1061,87 @@ address    name
 0013e78c   _pwm1_config
 0013e80b   _pwm2_config
 0013e86d   _pwm3_config
-0013e8ba   _pwm4_config
-0013e908   _pwm5_config
-0013e929   _pwm_period_calculation
-0013e94a   _teste_hrpwm
-0013e974   _pwm_output_disable
-0013e980   _pwm_output_enable
-0013e98c   _pwm_mep_sfo_tunning
-0013e993   _pwm_mep_sfo_init
-0013e9a1   _InitEPwmGpio
-0013e9ac   _InitEPwm1Gpio
-0013e9ba   _InitEPwm2Gpio
-0013e9c8   _InitEPwm3Gpio
-0013e9d8   _InitEPwm4Gpio
-0013e9e8   _InitEPwm5Gpio
-0013e9f6   _SFO
-0013eb36   _InitSysCtrl
-0013eb68   _InitPeripheralClocks
-0013ebc4   _CsmUnlock
-0013ebe5   _EcslUnlock
-0013ebfc   _LockDevice
-0013ec04   _GetEXEstatus
-0013ec17   _CSMSecurityStatus
-0013ec29   _ECSLSecurityStatus
-0013ec3b   _iir_filters_init
-0013ec62   _iir_cascade
-0013ecc8   _iir_parallel
-0013ed33   _InitMcbsp
-0013ed36   _InitMcbspa
-0013ed76   _InitMcbspaInt
-0013ed85   _InitMcbspa8bit
-0013ed8c   _InitMcbspa12bit
-0013ed97   _InitMcbspa16bit
-0013eda2   _InitMcbspa20bit
-0013edad   _InitMcbspa24bit
-0013edb8   _InitMcbspa32bit
-0013edc3   _InitMcbspGpio
-0013edc6   _InitMcbspaGpio
-0013edf4   _delay_loop
-0013ee0a   _clkg_delay_loop
-0013ee20   FS$$DIV
-0013eea8   _main
-0013eed7   _interrupts_enable_periph_ints
-0013eee6   _interrupts_remap
-0013ef01   _peripheral_init
-0013ef1a   _InitControllers
-0013ef25   _InitCpuTimers
-0013ef66   _ConfigCpuTimer
-0013efa1   _ConfigMcbspaSPIMaster
-0013f00b   _ad7634_config
-0013f00e   _adc1_isr
-0013f060   _cpu_timer2_isr
-0013f07b   _pi_controller_init
-0013f0b8   _pi_set_ref
-0013f0c1   _c_int00
-0013f107   _adc_calib
-0013f11e   _adc_config_constants
-0013f14b   _ConfigAdc1
-0013f18b   _gpio_config
-0013f1ad   _xInt_Config
-0013f1c9   _InitPieCtrl
-0013f1ed   _EnableInterrupts
-0013f1f6   L$$DIV
-0013f205   L$$MOD
-0013f213   UL$$DIV
-0013f21a   UL$$MOD
-0013f220   _InitGpio
-0013f244   ___memcpy_ff
-0013f265   _InitPieVectTable
-0013f285   __args_main
-0013f29e   C$$EXIT
-0013f29e   _abort
-0013f2a0   _exit
-0013f2b7   __register_unlock
-0013f2bb   __register_lock
-0013f2bf   __nop
-0013f2c0   _shared_mem_init
-0013f2c9   ___etext__
-0013f2c9   etext
-0013f2ca   _PieVectTableInit
-0013f3ca   ___cinit__
-0013f3ca   cinit
+0013e8cf   _pwm4_config
+0013e91d   _pwm5_config
+0013e93e   _pwm_period_calculation
+0013e95f   _teste_hrpwm
+0013e989   _pwm_output_disable
+0013e995   _pwm_output_enable
+0013e9a1   _pwm_mep_sfo_tunning
+0013e9a8   _pwm_mep_sfo_init
+0013e9b6   _InitEPwmGpio
+0013e9c1   _InitEPwm1Gpio
+0013e9cf   _InitEPwm2Gpio
+0013e9dd   _InitEPwm3Gpio
+0013e9ed   _InitEPwm4Gpio
+0013e9fd   _InitEPwm5Gpio
+0013ea0b   _SFO
+0013eb4b   _InitSysCtrl
+0013eb7d   _InitPeripheralClocks
+0013ebd9   _CsmUnlock
+0013ebfa   _EcslUnlock
+0013ec11   _LockDevice
+0013ec19   _GetEXEstatus
+0013ec2c   _CSMSecurityStatus
+0013ec3e   _ECSLSecurityStatus
+0013ec50   _iir_filters_init
+0013ec77   _iir_cascade
+0013ecdd   _iir_parallel
+0013ed48   _InitMcbsp
+0013ed4b   _InitMcbspa
+0013ed8b   _InitMcbspaInt
+0013ed9a   _InitMcbspa8bit
+0013eda1   _InitMcbspa12bit
+0013edac   _InitMcbspa16bit
+0013edb7   _InitMcbspa20bit
+0013edc2   _InitMcbspa24bit
+0013edcd   _InitMcbspa32bit
+0013edd8   _InitMcbspGpio
+0013eddb   _InitMcbspaGpio
+0013ee09   _delay_loop
+0013ee1f   _clkg_delay_loop
+0013ee35   FS$$DIV
+0013eebd   _main
+0013eeec   _interrupts_enable_periph_ints
+0013eefb   _interrupts_remap
+0013ef16   _peripheral_init
+0013ef2f   _InitControllers
+0013ef3a   _InitCpuTimers
+0013ef7b   _ConfigCpuTimer
+0013efb6   _ConfigMcbspaSPIMaster
+0013f020   _ad7634_config
+0013f023   _adc1_isr
+0013f075   _cpu_timer2_isr
+0013f090   _pi_controller_init
+0013f0cd   _pi_set_ref
+0013f0d6   _c_int00
+0013f11c   _adc_calib
+0013f133   _adc_config_constants
+0013f160   _ConfigAdc1
+0013f1a0   _gpio_config
+0013f1c2   _xInt_Config
+0013f1de   _InitPieCtrl
+0013f202   _EnableInterrupts
+0013f20b   L$$DIV
+0013f21a   L$$MOD
+0013f228   UL$$DIV
+0013f22f   UL$$MOD
+0013f235   _InitGpio
+0013f259   ___memcpy_ff
+0013f27a   _InitPieVectTable
+0013f29a   __args_main
+0013f2b3   C$$EXIT
+0013f2b3   _abort
+0013f2b5   _exit
+0013f2cc   __register_unlock
+0013f2d0   __register_lock
+0013f2d4   __nop
+0013f2d5   _shared_mem_init
+0013f2de   _PieVectTableInit
+0013f2de   ___etext__
+0013f2de   etext
+0013f3de   ___cinit__
+0013f3de   cinit
 0013fff0   code_start
 0013fff2   _FlashExeOnly
 0013fff4   _EcslPwl

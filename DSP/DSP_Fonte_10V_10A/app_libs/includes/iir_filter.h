@@ -11,7 +11,7 @@ typedef struct {
 } iir_biquad_t;
 
 int iir_filters_init( void );
-float iir(float in, iir_biquad_t *filt);
+float iir_cascade(float in, iir_biquad_t *filt);
 
 extern iir_biquad_t iir_in;
 

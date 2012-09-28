@@ -109,8 +109,8 @@
 <option id="com.ti.ccstudio.buildDefinitions.C2000_6.0.compilerID.VCU_SUPPORT.256866706" name="Specify VCU support (--vcu_support)" superClass="com.ti.ccstudio.buildDefinitions.C2000_6.0.compilerID.VCU_SUPPORT" value="com.ti.ccstudio.buildDefinitions.C2000_6.0.compilerID.VCU_SUPPORT.vcu0" valueType="enumerated"/>
 <option id="com.ti.ccstudio.buildDefinitions.C2000_6.0.compilerID.INCLUDE_PATH.650991532" name="Add dir to #include search path (--include_path, -I)" superClass="com.ti.ccstudio.buildDefinitions.C2000_6.0.compilerID.INCLUDE_PATH" valueType="includePath">
 <listOptionValue builtIn="false" value="&quot;${CG_TOOL_ROOT}/include&quot;"/>
-<listOptionValue builtIn="false" value="&quot;C:\Arquivos\Doutorado\Sincrotron\Implementacao\DSP\F28M35x_headers\include&quot;"/>
-<listOptionValue builtIn="false" value="&quot;C:\Arquivos\Doutorado\Sincrotron\Implementacao\DSP\F28M35x_common\include&quot;"/>
+<listOptionValue builtIn="false" value="&quot;${PROJETO_DSP}\F28M35x_headers\include&quot;"/>
+<listOptionValue builtIn="false" value="&quot;${PROJETO_DSP}\F28M35x_common\include&quot;"/>
 </option>
 <option id="com.ti.ccstudio.buildDefinitions.C2000_6.0.compilerID.DEFINE.1745793994" superClass="com.ti.ccstudio.buildDefinitions.C2000_6.0.compilerID.DEFINE" valueType="definedSymbols">
 <listOptionValue builtIn="false" value="&quot;_FLASH&quot;"/>
@@ -123,7 +123,7 @@
 <option id="com.ti.ccstudio.buildDefinitions.C2000_6.0.linkerID.LIBRARY.468545437" name="Include library file or command file as input (--library, -l)" superClass="com.ti.ccstudio.buildDefinitions.C2000_6.0.linkerID.LIBRARY" valueType="libs">
 <listOptionValue builtIn="false" value="&quot;rts2800_fpu32.lib&quot;"/>
 <listOptionValue builtIn="false" value="&quot;libc.a&quot;"/>
-<listOptionValue builtIn="false" value="&quot;C:\Arquivos\Doutorado\Sincrotron\Implementacao\DSP\FPUfastRTS\V100\lib\rts2800_fpu32_fast_supplement.lib&quot;"/>
+<listOptionValue builtIn="false" value="&quot;${PROJETO_DSP}\FPUfastRTS\V100\lib\rts2800_fpu32_fast_supplement.lib&quot;"/>
 </option>
 <option id="com.ti.ccstudio.buildDefinitions.C2000_6.0.linkerID.SEARCH_PATH.158061591" name="Add &lt;dir&gt; to library search path (--search_path, -i)" superClass="com.ti.ccstudio.buildDefinitions.C2000_6.0.linkerID.SEARCH_PATH" valueType="stringList">
 <listOptionValue builtIn="false" value="&quot;${CG_TOOL_ROOT}/lib&quot;"/>
@@ -133,11 +133,17 @@
 </tool>
 <macros expandEnvironmentMacros="true"/>
 </toolChain>
-<resourceConfiguration exclude="true" id="com.ti.ccstudio.buildDefinitions.C2000.Debug.7367204./DSP_Fonte_10V_10A/F28M35x_generic_C28_FLASH.cmd" name="F28M35x_generic_C28_FLASH.cmd" rcbsApplicability="disable" resourcePath="/DSP_Fonte_10V_10A/F28M35x_generic_C28_FLASH.cmd" toolsToInvoke="com.ti.ccstudio.buildDefinitions.C2000_6.0.exe.linkerDebug.1713659317./DSP_Fonte_10V_10A/F28M35x_generic_C28_FLASH.cmd">
+<resourceConfiguration exclude="true" id="com.ti.ccstudio.buildDefinitions.C2000.Debug.7367204./DSP_Fonte_10V_10A/F28M35x_generic_C28_FLASH.cmd" name="F28M35x_generic_C28_FLASH.cmd" rcbsApplicability="disable" resourcePath="/LNLS_DSP/F28M35x_generic_C28_FLASH.cmd" toolsToInvoke="com.ti.ccstudio.buildDefinitions.C2000_6.0.exe.linkerDebug.1713659317./DSP_Fonte_10V_10A/F28M35x_generic_C28_FLASH.cmd">
 <tool id="com.ti.ccstudio.buildDefinitions.C2000_6.0.exe.linkerDebug.1713659317./DSP_Fonte_10V_10A/F28M35x_generic_C28_FLASH.cmd" name="C2000 Linker" superClass="com.ti.ccstudio.buildDefinitions.C2000_6.0.exe.linkerDebug.1713659317"/>
 </resourceConfiguration>
-<resourceConfiguration exclude="true" id="com.ti.ccstudio.buildDefinitions.C2000.Debug.7367204./DSP_Fonte_10V_10A/F28M35x_generic_wshared_C28_FLASH.cmd" name="F28M35x_generic_wshared_C28_FLASH.cmd" rcbsApplicability="disable" resourcePath="/DSP_Fonte_10V_10A/F28M35x_generic_wshared_C28_FLASH.cmd" toolsToInvoke="com.ti.ccstudio.buildDefinitions.C2000_6.0.exe.linkerDebug.1713659317./DSP_Fonte_10V_10A/F28M35x_generic_wshared_C28_FLASH.cmd">
+<resourceConfiguration exclude="false" id="com.ti.ccstudio.buildDefinitions.C2000.Debug.7367204./DSP_Fonte_10V_10A/F28M35x_generic_wshared_C28_FLASH.cmd" name="F28M35x_generic_wshared_C28_FLASH.cmd" rcbsApplicability="disable" resourcePath="/LNLS_DSP/F28M35x_generic_wshared_C28_FLASH.cmd" toolsToInvoke="com.ti.ccstudio.buildDefinitions.C2000_6.0.exe.linkerDebug.1713659317./DSP_Fonte_10V_10A/F28M35x_generic_wshared_C28_FLASH.cmd">
 <tool id="com.ti.ccstudio.buildDefinitions.C2000_6.0.exe.linkerDebug.1713659317./DSP_Fonte_10V_10A/F28M35x_generic_wshared_C28_FLASH.cmd" name="C2000 Linker" superClass="com.ti.ccstudio.buildDefinitions.C2000_6.0.exe.linkerDebug.1713659317"/>
+</resourceConfiguration>
+<resourceConfiguration exclude="false" id="com.ti.ccstudio.buildDefinitions.C2000.Debug.7367204./DSP_Fonte_10V_10A/F28M35x_generic_wshared_C28_FLASH.cmd" name="F28M35x_generic_wshared_C28_FLASH.cmd" rcbsApplicability="disable" resourcePath="/DSP_Fonte_10V_10A/F28M35x_generic_wshared_C28_FLASH.cmd" toolsToInvoke="com.ti.ccstudio.buildDefinitions.C2000_6.0.exe.linkerDebug.1713659317./DSP_Fonte_10V_10A/F28M35x_generic_wshared_C28_FLASH.cmd">
+<tool id="com.ti.ccstudio.buildDefinitions.C2000_6.0.exe.linkerDebug.1713659317./DSP_Fonte_10V_10A/F28M35x_generic_wshared_C28_FLASH.cmd" name="C2000 Linker" superClass="com.ti.ccstudio.buildDefinitions.C2000_6.0.exe.linkerDebug.1713659317"/>
+</resourceConfiguration>
+<resourceConfiguration exclude="true" id="com.ti.ccstudio.buildDefinitions.C2000.Debug.7367204./DSP_Fonte_10V_10A/F28M35x_generic_C28_FLASH.cmd" name="F28M35x_generic_C28_FLASH.cmd" rcbsApplicability="disable" resourcePath="/DSP_Fonte_10V_10A/F28M35x_generic_C28_FLASH.cmd" toolsToInvoke="com.ti.ccstudio.buildDefinitions.C2000_6.0.exe.linkerDebug.1713659317./DSP_Fonte_10V_10A/F28M35x_generic_C28_FLASH.cmd">
+<tool id="com.ti.ccstudio.buildDefinitions.C2000_6.0.exe.linkerDebug.1713659317./DSP_Fonte_10V_10A/F28M35x_generic_C28_FLASH.cmd" name="C2000 Linker" superClass="com.ti.ccstudio.buildDefinitions.C2000_6.0.exe.linkerDebug.1713659317"/>
 </resourceConfiguration>
 </configuration>
 <macros/>

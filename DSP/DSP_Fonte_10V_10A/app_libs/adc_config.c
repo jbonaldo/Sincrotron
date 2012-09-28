@@ -8,17 +8,6 @@
  #include "includes/adc_config.h"
  #include "../config.h"
 
-#define CALIB_SAMPLES               1000
-#define ADC_MAX_VALUE               4096
-#define ADC_MAX_VOLTAGE             3.3
-#define CONDITIONING_MAX_VOLTAGE    2.9
-#define TRANSDUCER_MAX_VOLTAGE_PP   20   
-#define PLANT_MAX_VOLTAGE_PP        20//24
-#define NOMINAL_VALUE               20   
-
-Uint16 AdcOffset = 0;
-float AdcGainPU = 0;
-
 void ConfigAdc1( void )
 {
     // Inicializa ADC (Power On e Enable)
@@ -83,39 +72,8 @@ void ConfigAdc1( void )
    Adc1Regs.ADCINTOVFCLR.all = 0xFFFF;
    Adc1Regs.ADCSOCOVFCLR1.all = 0xFFFF;
    
+   
     
     EDIS;
-}
-
-int adc_calib(unsigned int in)
-{
-    static Uint16 count = 0;
-    static long acc = 0;
-
-    acc += in;
-    
-    count++;
-    if(count == CALIB_SAMPLES)
-    {
-        AdcOffset = acc / CALIB_SAMPLES;
-        return 0;
-    }
-    
-    return 1;
-}
-
-void adc_config_constants(void)
-{
-    float kTransducer = (float) PLANT_MAX_VOLTAGE_PP/TRANSDUCER_MAX_VOLTAGE_PP;
-    float kConditioningCircuit = (float) TRANSDUCER_MAX_VOLTAGE_PP/CONDITIONING_MAX_VOLTAGE;
-    //float kAdjustConditioningDsp = (float) CONDITIONING_MAX_VOLTAGE / ADC_MAX_VOLTAGE;
-    float AdcRealResolution = ((float) CONDITIONING_MAX_VOLTAGE / ADC_MAX_VOLTAGE) * ADC_MAX_VALUE;
-    float kAdc = (float) ADC_MAX_VOLTAGE / ADC_MAX_VALUE;
-    
-    float kConv = kTransducer * kConditioningCircuit * kAdc;
-    //float kConv = kTransducer * kAdjustConditioningDsp * kAdc;
-    
-    AdcGainPU = kConv / NOMINAL_VALUE;
-    AdcGainPU = 2.0 * AdcGainPU; //(2.0 utilizado para adaptar o valor devido a extração do nível médio)
 }
 

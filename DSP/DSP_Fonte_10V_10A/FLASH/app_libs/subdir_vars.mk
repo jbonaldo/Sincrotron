@@ -4,6 +4,8 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS += \
+../app_libs/ad7634.c \
+../app_libs/adc.c \
 ../app_libs/adc_config.c \
 ../app_libs/controller_pi.c \
 ../app_libs/gpio_config.c \
@@ -12,6 +14,8 @@ C_SRCS += \
 ../app_libs/shared_mem.c 
 
 OBJS += \
+./app_libs/ad7634.obj \
+./app_libs/adc.obj \
 ./app_libs/adc_config.obj \
 ./app_libs/controller_pi.obj \
 ./app_libs/gpio_config.obj \
@@ -20,6 +24,8 @@ OBJS += \
 ./app_libs/shared_mem.obj 
 
 C_DEPS += \
+./app_libs/ad7634.pp \
+./app_libs/adc.pp \
 ./app_libs/adc_config.pp \
 ./app_libs/controller_pi.pp \
 ./app_libs/gpio_config.pp \
@@ -28,6 +34,8 @@ C_DEPS += \
 ./app_libs/shared_mem.pp 
 
 C_DEPS__QTD += \
+".\app_libs\ad7634.pp" \
+".\app_libs\adc.pp" \
 ".\app_libs\adc_config.pp" \
 ".\app_libs\controller_pi.pp" \
 ".\app_libs\gpio_config.pp" \
@@ -36,6 +44,8 @@ C_DEPS__QTD += \
 ".\app_libs\shared_mem.pp" 
 
 OBJS__QTD += \
+".\app_libs\ad7634.obj" \
+".\app_libs\adc.obj" \
 ".\app_libs\adc_config.obj" \
 ".\app_libs\controller_pi.obj" \
 ".\app_libs\gpio_config.obj" \
@@ -44,6 +54,8 @@ OBJS__QTD += \
 ".\app_libs\shared_mem.obj" 
 
 C_SRCS_QUOTED += \
+"../app_libs/ad7634.c" \
+"../app_libs/adc.c" \
 "../app_libs/adc_config.c" \
 "../app_libs/controller_pi.c" \
 "../app_libs/gpio_config.c" \

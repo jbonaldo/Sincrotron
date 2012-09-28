@@ -16,8 +16,12 @@ Uint16 Periodo_ticks = 0;
 void pwm1_config(void);
 void pwm2_config(void);
 void pwm3_config(void);
+void pwm4_config(void);
+void pwm5_config(void);
 void InitEPwm1Gpio(void);
 Uint16 pwm_period_calculation(double freq);
+
+#pragma CODE_SECTION(pwm_set_duty, "ramfuncs");
 
 
 // The following declarations are required in order to use the SFO library functions:
@@ -34,12 +38,16 @@ void pwm_config(void)
 {
     pwm_output_disable();
     Periodo_ticks = pwm_period_calculation(F_SAMP);
-    pwm1_config();
-    pwm2_config();
-    pwm3_config();
+    pwm1_config();  //pulsos disparo
+    pwm2_config();  //pulsos disparo
+    pwm3_config();  
+    pwm4_config();  //DAC pwm
+    pwm5_config();  //Gera sinal CNVST para iniciar conversao do AD7634
     InitEPwm1Gpio();
     InitEPwm2Gpio();
     InitEPwm3Gpio();
+    InitEPwm4Gpio();
+    InitEPwm5Gpio();
     
     pwm_mep_sfo_init();
 }
@@ -57,6 +65,10 @@ void pwm1_config(void)
     EPwm1Regs.TBCTL.bit.SYNCOSEL = TB_CTR_ZERO;     // Sync down-stream module
     EPwm1Regs.TBCTL.bit.PRDLD = TB_SHADOW;
     
+    EPwm1Regs.ETSEL.bit.INTSEL = ET_CTR_PRDZERO;    // Select INT on Zero event
+    EPwm1Regs.ETSEL.bit.INTEN = 1;                  // Enable INT
+    EPwm1Regs.ETPS.bit.INTPRD = ET_1ST;             // Generate INT on 1st event
+    
     EPwm1Regs.CMPCTL.bit.SHDWAMODE = CC_SHADOW;
     EPwm1Regs.CMPCTL.bit.SHDWBMODE = CC_SHADOW;
     EPwm1Regs.CMPCTL.bit.LOADAMODE = CC_CTR_ZERO_PRD;   // load on CTR=Zero and CTR = PRD
@@ -67,7 +79,7 @@ void pwm1_config(void)
     EPwm1Regs.HRCNFG.all = 0x0;
     EPwm1Regs.HRCNFG.bit.EDGMODE = HR_BEP;          // MEP control on both edges
     EPwm1Regs.HRCNFG.bit.CTLMODE = HR_CMP;          // CMPAHR and TBPRDHR HR control
-    EPwm1Regs.HRCNFG.bit.HRLOAD  = HR_CTR_ZERO_PRD;// load on CTR = 0 and CTR = TBPRD
+    EPwm1Regs.HRCNFG.bit.HRLOAD  = HR_CTR_ZERO_PRD; // load on CTR = 0 and CTR = TBPRD
     EPwm1Regs.HRCNFG.bit.AUTOCONV = 1;              // Enable autoconversion for HR period
     EPwm1Regs.HRPCTL.bit.TBPHSHRLOADE = 1;          // Enable TBPHSHR sync (required for updwn count HR control)
     EPwm1Regs.HRPCTL.bit.HRPE = 1;                  // Turn on high-resolution period control.
@@ -75,7 +87,6 @@ void pwm1_config(void)
     EPwm1Regs.TBCTL.bit.SWFSYNC = 1;                // Synchronize high resolution phase to start HR period
     EDIS;
         
-    
     EPwm1Regs.AQCTLA.bit.CAU = AQ_CLEAR;              // set actions for EPWM1A
     EPwm1Regs.AQCTLA.bit.CAD = AQ_SET;
     
@@ -132,7 +143,7 @@ void pwm2_config(void)
     EPwm2Regs.TBCTL.bit.SWFSYNC = 1;                // Synchronize high resolution phase to start HR period
     EDIS;    
     
-    EPwm2Regs.AQCTLA.bit.CAU = AQ_SET;              // set actions for EPWM1A
+    EPwm2Regs.AQCTLA.bit.CAU = AQ_SET;              // set actions for EPWM2A
     EPwm2Regs.AQCTLA.bit.CAD = AQ_CLEAR;
     
     EPwm2Regs.DBCTL.bit.OUT_MODE = DB_FULL_ENABLE;  // enable Dead-band module
@@ -169,12 +180,11 @@ void pwm3_config(void)
     EPwm3Regs.TBCTL.bit.HSPCLKDIV = TB_DIV1;        // TBCLK = SYSCLKOUT
     EPwm3Regs.TBCTL.bit.CLKDIV = TB_DIV1;
     
-    EPwm3Regs.TBPRD = Periodo_ticks; 
-    EPwm3Regs.TBPHS.half.TBPHS = EPwm3Regs.TBPRD;   // Set Phase register to zero
-    EPwm3Regs.TBCTL.bit.CTRMODE = TB_COUNT_UPDOWN;  // Symmetrical mode
-    EPwm3Regs.TBCTL.bit.PHSEN = TB_ENABLE;          // Slave module
-    EPwm3Regs.TBCTL.bit.SYNCOSEL = TB_SYNC_IN;      // Aquire sync from master module (ePwm1)
-    EPwm3Regs.TBCTL.bit.PHSDIR = TB_DOWN;             // Count DOWN on sync (=180 deg)
+    EPwm3Regs.TBPRD = CNVST_TICKS; 
+    EPwm3Regs.TBPHS.half.TBPHS = 0;   // Set Phase register to zero
+    EPwm3Regs.TBCTL.bit.CTRMODE = TB_COUNT_UP;  // Symmetrical mode
+    EPwm3Regs.TBCTL.bit.PHSEN = TB_DISABLE;          // Slave module
+    EPwm3Regs.TBCTL.bit.SYNCOSEL = TB_SYNC_DISABLE;      // Aquire sync from master module (ePwm1)
     EPwm3Regs.TBCTL.bit.PRDLD = TB_SHADOW;
     
     EPwm3Regs.CMPCTL.bit.SHDWAMODE = CC_SHADOW;
@@ -194,35 +204,88 @@ void pwm3_config(void)
     EPwm3Regs.TBCTL.bit.SWFSYNC = 1;                // Synchronize high resolution phase to start HR period
     EDIS;    
     
-    EPwm3Regs.AQCTLA.bit.CAU = AQ_SET;              // set actions for EPWM1A
-    EPwm3Regs.AQCTLA.bit.CAD = AQ_CLEAR;
-    
-    EPwm3Regs.DBCTL.bit.OUT_MODE = DB_FULL_ENABLE;  // enable Dead-band module
-    EPwm3Regs.DBCTL.bit.POLSEL = DB_ACTV_HIC;       // Active Hi complementary
-    EPwm3Regs.DBFED = 50;                           // FED = 50 TBCLKs
-    EPwm3Regs.DBRED = 50;                           // RED = 50 TBCLKs    
+    EPwm3Regs.AQCTLA.bit.ZRO = AQ_SET;              // set actions for EPWM1A
+    EPwm3Regs.AQCTLA.bit.CAU = AQ_CLEAR;
+    EPwm3Regs.AQCTLB.bit.ZRO = AQ_SET;              // set actions for EPWM1B
+    EPwm3Regs.AQCTLB.bit.CBU = AQ_CLEAR;
     
     
-    // Enable SOCA and SOCB 
-//    EPwm3Regs.ETSEL.bit.SOCAEN     = 1;             // Enable SOC on A group
-//    EPwm3Regs.ETSEL.bit.SOCBEN     = 1;             // Enable SOC on B group
-//    EPwm3Regs.ETSEL.bit.SOCASEL    = ET_CTR_ZERO;   // Select SOC from CMPA/CMPC on up count
-//    EPwm3Regs.ETSEL.bit.SOCBSEL    = ET_CTR_PRD;    // Select SOC from CMPB/CMPD on up count
-//    EPwm3Regs.ETSEL.bit.SOCASELCMP = 0x0;           // 0->CMPA; 1->CMPC 
-//    EPwm3Regs.ETSEL.bit.SOCBSELCMP = 0x0;           // 0->CMPB; 1->CMPD
-//                                                 
-//    EPwm3Regs.ETPS.bit.SOCAPRD = ET_1ST;            // Generate SOCA pulse on every 3rd event
-//    EPwm3Regs.ETPS.bit.SOCBPRD = ET_1ST;            // Generate SOCA pulse on every 3rd event
-    
-    
-    //Trip Zone - Utilizado para poder desabilitar o PWM (neste caso, via software)
-    EPwm3Regs.TZSEL.bit.OSHT1 = 1;                   // Saida do pwm vai para o estado definido (abaixo) quando ocorre um evento de Trip   
-    EPwm3Regs.TZCTL.bit.TZA = TZ_FORCE_LO;           // EPWM1A em estado de Alta Impedancia
-    EPwm3Regs.TZCTL.bit.TZB = TZ_FORCE_LO;           // EPWM1B em estado de Alta Impedancia    
-    
-    
-    EPwm3Regs.CMPA.half.CMPA = Periodo_ticks /2;    // adjust duty for output EPWM1A
+    EPwm3Regs.CMPA.half.CMPA = EPwm3Regs.TBPRD / 2;    // adjust duty for output EPWM1A
+    EPwm3Regs.CMPB = EPwm3Regs.TBPRD / 2;    // adjust duty for output EPWM1B
     EPwm3Regs.CMPA.half.CMPAHR = (1 << 8);          // initialize HRPWM extension
+}
+
+
+void pwm4_config(void)
+{
+    // Set TBCLK frequency
+    EPwm4Regs.TBCTL.bit.HSPCLKDIV = TB_DIV1;        // TBCLK = SYSCLKOUT
+    EPwm4Regs.TBCTL.bit.CLKDIV = TB_DIV1;
+    
+    EPwm4Regs.TBPRD = CNVST_TICKS; 
+    EPwm4Regs.TBPHS.half.TBPHS = 0;   // Set Phase register to zero
+    EPwm4Regs.TBCTL.bit.CTRMODE = TB_COUNT_UP;  // Symmetrical mode
+    EPwm4Regs.TBCTL.bit.PHSEN = TB_DISABLE;          // Slave module
+    EPwm4Regs.TBCTL.bit.SYNCOSEL = TB_SYNC_DISABLE;      // Aquire sync from master module (ePwm1)
+    EPwm4Regs.TBCTL.bit.PRDLD = TB_SHADOW;
+    
+    EPwm4Regs.CMPCTL.bit.SHDWAMODE = CC_SHADOW;
+    EPwm4Regs.CMPCTL.bit.SHDWBMODE = CC_SHADOW;
+    EPwm4Regs.CMPCTL.bit.LOADAMODE = CC_CTR_ZERO;   // load on CTR=Zero
+    EPwm4Regs.CMPCTL.bit.LOADBMODE = CC_CTR_ZERO;   // load on CTR=Zero
+    
+    EALLOW;
+    EPwm4Regs.HRCNFG.all = 0x0;
+    EPwm4Regs.HRCNFG.bit.EDGMODE = HR_BEP;          // MEP control on both edges
+    EPwm4Regs.HRCNFG.bit.CTLMODE = HR_CMP;          // CMPAHR and TBPRDHR HR control
+    EPwm4Regs.HRCNFG.bit.HRLOAD  = HR_CTR_ZERO_PRD;// load on CTR = 0 and CTR = TBPRD
+    EPwm4Regs.HRCNFG.bit.AUTOCONV = 1;              // Enable autoconversion for HR period
+    EPwm4Regs.HRPCTL.bit.TBPHSHRLOADE = 1;          // Enable TBPHSHR sync (required for updwn count HR control)
+    EPwm4Regs.HRPCTL.bit.HRPE = 1;                  // Turn on high-resolution period control.
+    SysCtrlRegs.PCLKCR0.bit.TBCLKSYNC = 1;          // Enable TBCLK within the EPWM
+    EPwm4Regs.TBCTL.bit.SWFSYNC = 1;                // Synchronize high resolution phase to start HR period
+    EDIS;    
+    
+    EPwm4Regs.AQCTLA.bit.ZRO = AQ_SET;              // set actions for EPWM1A
+    EPwm4Regs.AQCTLA.bit.CAU = AQ_CLEAR;
+    
+    EPwm4Regs.DBCTL.bit.OUT_MODE = DB_FULL_ENABLE;  // enable Dead-band module
+    EPwm4Regs.DBCTL.bit.POLSEL = DB_ACTV_LOC;       // Active Low complementary
+    EPwm4Regs.DBFED = 10;                           // FED = 50 TBCLKs
+    EPwm4Regs.DBRED = 10;    
+    
+    EPwm4Regs.CMPA.half.CMPA = EPwm4Regs.TBPRD / 2;    // adjust duty for output EPWM1A
+    EPwm4Regs.CMPB = EPwm4Regs.TBPRD / 2;    // adjust duty for output EPWM1B
+    EPwm4Regs.CMPA.half.CMPAHR = (1 << 8);          // initialize HRPWM extension
+}
+
+
+void pwm5_config(void)
+{
+   
+    EPwm5Regs.TBPRD = CNVST_TICKS;                        // Set timer period
+    EPwm5Regs.TBPHS.half.TBPHS = 0x0000;           // Phase is 0
+    EPwm5Regs.TBCTR = 0x0000;                      // Clear counter
+
+    // Setup TBCLK
+    EPwm5Regs.TBCTL.bit.CTRMODE = TB_COUNT_UP;    // Count up
+    EPwm5Regs.TBCTL.bit.PHSEN = TB_DISABLE;       // Disable phase loading
+    EPwm5Regs.TBCTL.bit.HSPCLKDIV = TB_DIV1;      // Clock ratio to SYSCLKOUT
+    EPwm5Regs.TBCTL.bit.CLKDIV = TB_DIV1;
+
+    EPwm5Regs.CMPCTL.bit.SHDWAMODE = CC_SHADOW;   // Load registers every ZERO
+    EPwm5Regs.CMPCTL.bit.SHDWBMODE = CC_SHADOW;
+    EPwm5Regs.CMPCTL.bit.LOADAMODE = CC_CTR_ZERO;
+    EPwm5Regs.CMPCTL.bit.LOADBMODE = CC_CTR_ZERO;
+
+
+    // Set actions
+    EPwm5Regs.AQCTLA.bit.CAU = AQ_CLEAR;            // Clear PWM1A on CAU
+
+    // Use EPWM1B as a reference
+    EPwm5Regs.AQCTLA.bit.ZRO = AQ_SET;           // TOGGLE PWM1B on Zero
+    
+    EPwm5Regs.CMPA.half.CMPA = (CNVST_TICKS * 0.95);    // adjust duty for output EPWM1A
 }
 
 Uint16 pwm_period_calculation(double freq)
@@ -249,6 +312,10 @@ void pwm_set_duty( float duty_pu, Uint16 module)
         ePWM = &EPwm1Regs;
     else if(module == 2)
      ePWM = &EPwm2Regs;
+    else if(module == 3)
+     ePWM = &EPwm3Regs;
+    else if(module == 4)
+     ePWM = &EPwm4Regs;
         
     
     duty = duty_pu * (float)ePWM->TBPRD; 
@@ -259,6 +326,7 @@ void pwm_set_duty( float duty_pu, Uint16 module)
     ePWM->CMPA.half.CMPA   = duty_int;
     ePWM->CMPA.half.CMPAHR = (duty_frac << 8);
     
+    #ifdef DEBUG
     if(module == 1) {
         if(++pwmDebugHRcount > NDEBUG_HRPWM)
         {
@@ -266,6 +334,7 @@ void pwm_set_duty( float duty_pu, Uint16 module)
         }
      pwmDebugHR_duty_fract[pwmDebugHRcount] = duty_frac;
     }
+    #endif
 }  
 
 Uint32 j = 0;

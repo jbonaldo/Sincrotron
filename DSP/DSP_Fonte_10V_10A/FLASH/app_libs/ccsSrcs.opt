@@ -1,1 +1,1 @@
-"../app_libs/adc_config.c" "../app_libs/controller_pi.c" "../app_libs/gpio_config.c" "../app_libs/iir_filter.c" "../app_libs/pwm_config.c" "../app_libs/shared_mem.c" 
+"../app_libs/ad7634.c" "../app_libs/adc.c" "../app_libs/adc_config.c" "../app_libs/controller_pi.c" "../app_libs/gpio_config.c" "../app_libs/iir_filter.c" "../app_libs/pwm_config.c" "../app_libs/shared_mem.c" 

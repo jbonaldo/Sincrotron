@@ -13,6 +13,8 @@
 #include "includes/controller_pi.h"
 #include "../config.h"
 
+#pragma CODE_SECTION(pi_controller, "ramfuncs");
+#pragma CODE_SECTION(rate_limiter, "ramfuncs");
 
 #define saturation(obj, limite)         \
     if(obj > limite)  obj =  limite;    \
@@ -36,17 +38,17 @@ float pi_controller(float in, pi_controller_t *pi)
     float dynamic_lim;
     float temp;
     
-    //erro = rate_limiter(pi->ref, &i_ref) - in;
-    erro = pi->ref - in;
+    erro = rate_limiter(pi->ref, &i_ref) - in;
+    //erro = pi->ref - in;
     
     temp = erro * pi->kp;
     saturation(temp, pi->max);
     pi->up = temp;
     
-    dynamic_lim = (temp - pi->max);
-    if(dynamic_lim < 0.0)
-        dynamic_lim = -dynamic_lim;
-    
+    if(temp < 0.0)
+        temp = -temp;    
+    dynamic_lim = (pi->max - temp);
+
     temp = pi->ui + erro * pi->ki;
     saturation(temp, dynamic_lim);
     pi->ui = temp;
@@ -62,12 +64,12 @@ void pi_controller_init(float sample_freq)
 {
 //    pi_io.kp = 2;
 //    pi_io.ki = 1000 / (float) sample_freq;
-    pi_io.kp = 10.5;
+    pi_io.kp = 2.5;
     pi_io.ki = 4808 / (float) sample_freq;
-    pi_io.max = 1;
+    pi_io.max = 0.95;
     pi_io.ui = 0;
     pi_io.up = 0;
-    pi_io.ref = 0.3;
+    pi_io.ref = 0.0;
     
     i_ref.value = 0;
     i_ref.value_limited = 0;
@@ -87,15 +89,26 @@ void pi_set_ref( float ref )
 float rate_limiter( float in, d_dt_t *d_dt)
 {
     float di;
-    
-    d_dt->value = in;
+    float di_abs;
 
-    di = d_dt->value - d_dt->value_limited;
+    if(in != d_dt->value_limited)    
+    {
+        d_dt->value = in;
     
-    if( di > d_dt->delta_max )
-         d_dt->value_limited +=  d_dt->delta_max;     
-    else
-         d_dt->value_limited =  d_dt->value;
-         
+        di = d_dt->value - d_dt->value_limited;
+        
+        if(di > 0.0) di_abs = di;
+        else         di_abs = -di; 
+           
+        if( di_abs > d_dt->delta_max)
+        {
+            if(di > 0)
+                d_dt->value_limited +=  d_dt->delta_max;
+            else
+                d_dt->value_limited -=  d_dt->delta_max;
+        }
+        else
+             d_dt->value_limited =  d_dt->value;
+    }         
     return d_dt->value_limited;
 }

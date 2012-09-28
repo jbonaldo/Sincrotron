@@ -16,13 +16,17 @@ $(GEN_CMDS_QUOTED) \
 "./app_libs/gpio_config.obj" \
 "./app_libs/controller_pi.obj" \
 "./app_libs/adc_config.obj" \
+"./app_libs/adc.obj" \
+"./app_libs/ad7634.obj" \
 "./main.obj" \
 "./source/F28M35x_usDelay.obj" \
 "./source/F28M35x_SysCtrl.obj" \
 "./source/F28M35x_PieVect.obj" \
 "./source/F28M35x_PieCtrl.obj" \
+"./source/F28M35x_Mcbsp.obj" \
 "./source/F28M35x_Gpio.obj" \
 "./source/F28M35x_DefaultIsr.obj" \
+"./source/F28M35x_CpuTimers.obj" \
 "./source/F28M35x_CodeStartBranch.obj" \
 "./source/F28M35x_Adc.obj" \
 "./source2/F28M35x_GlobalVariableDefs.obj" \
@@ -146,8 +150,8 @@ DSP_Fonte_10V_10A.out: $(OBJS) $(CMD_SRCS) $(LIB_SRCS) $(GEN_CMDS)
 # Other Targets
 clean:
 	-$(RM) $(C2000_EXECUTABLE_OUTPUTS__QTD) "DSP_Fonte_10V_10A.out"
-	-$(RM) ".\source2\F28M35x_GlobalVariableDefs.pp" ".\source\F28M35x_Adc.pp" ".\source\F28M35x_DefaultIsr.pp" ".\source\F28M35x_Gpio.pp" ".\source\F28M35x_PieCtrl.pp" ".\source\F28M35x_PieVect.pp" ".\source\F28M35x_SysCtrl.pp" ".\main.pp" ".\app_libs\adc_config.pp" ".\app_libs\controller_pi.pp" ".\app_libs\gpio_config.pp" ".\app_libs\iir_filter.pp" ".\app_libs\pwm_config.pp" ".\app_libs\shared_mem.pp" 
-	-$(RM) ".\source2\F28M35x_GlobalVariableDefs.obj" ".\source\F28M35x_Adc.obj" ".\source\F28M35x_CodeStartBranch.obj" ".\source\F28M35x_DefaultIsr.obj" ".\source\F28M35x_Gpio.obj" ".\source\F28M35x_PieCtrl.obj" ".\source\F28M35x_PieVect.obj" ".\source\F28M35x_SysCtrl.obj" ".\source\F28M35x_usDelay.obj" ".\main.obj" ".\app_libs\adc_config.obj" ".\app_libs\controller_pi.obj" ".\app_libs\gpio_config.obj" ".\app_libs\iir_filter.obj" ".\app_libs\pwm_config.obj" ".\app_libs\shared_mem.obj" 
+	-$(RM) ".\source2\F28M35x_GlobalVariableDefs.pp" ".\source\F28M35x_Adc.pp" ".\source\F28M35x_CpuTimers.pp" ".\source\F28M35x_DefaultIsr.pp" ".\source\F28M35x_Gpio.pp" ".\source\F28M35x_Mcbsp.pp" ".\source\F28M35x_PieCtrl.pp" ".\source\F28M35x_PieVect.pp" ".\source\F28M35x_SysCtrl.pp" ".\main.pp" ".\app_libs\ad7634.pp" ".\app_libs\adc.pp" ".\app_libs\adc_config.pp" ".\app_libs\controller_pi.pp" ".\app_libs\gpio_config.pp" ".\app_libs\iir_filter.pp" ".\app_libs\pwm_config.pp" ".\app_libs\shared_mem.pp" 
+	-$(RM) ".\source2\F28M35x_GlobalVariableDefs.obj" ".\source\F28M35x_Adc.obj" ".\source\F28M35x_CodeStartBranch.obj" ".\source\F28M35x_CpuTimers.obj" ".\source\F28M35x_DefaultIsr.obj" ".\source\F28M35x_Gpio.obj" ".\source\F28M35x_Mcbsp.obj" ".\source\F28M35x_PieCtrl.obj" ".\source\F28M35x_PieVect.obj" ".\source\F28M35x_SysCtrl.obj" ".\source\F28M35x_usDelay.obj" ".\main.obj" ".\app_libs\ad7634.obj" ".\app_libs\adc.obj" ".\app_libs\adc_config.obj" ".\app_libs\controller_pi.obj" ".\app_libs\gpio_config.obj" ".\app_libs\iir_filter.obj" ".\app_libs\pwm_config.obj" ".\app_libs\shared_mem.obj" 
 	-$(RM) ".\source\F28M35x_CodeStartBranch.pp" ".\source\F28M35x_usDelay.pp" 
 	-@echo ' '
 
