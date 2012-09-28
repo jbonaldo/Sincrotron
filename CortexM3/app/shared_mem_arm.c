@@ -13,7 +13,7 @@ int m3_r_w_array[2048]; // this array is mapped to S2
 
 void shared_mem_init( void )
 {
-    shm_m2c_write.iref = 0.001;
+    shm_m2c_write.iref = 0.1;
 }
 
 void shm_setPiRef( float ref )
