@@ -1,0 +1,11 @@
+#Mon Jul 16 14:30:35 BRT 2012
+pathvariable.CCS_C2000_6_0_1_CG_ROOT=C\:/Program Files (x86)/Texas Instruments/C2000 Code Generation Tools 6.0.1
+pathvariable.INSTALLROOT_F28M35X_VBETA1=C\:/TI/controlSUITE/device_support/F28M35x/v100
+pathvariable.CCS_TMS470_4_9_0_CG_ROOT=C\:/Program Files (x86)/Texas Instruments/TMS470 Code Generation Tools 4.9.0
+pathvariable.CCS_MSP430_3_3_3_CG_ROOT=C\:/Program Files (x86)/Texas Instruments/ccsv4/tools/compiler/msp430
+pathvariable.INSTALLROOT_FPU_FASTRTS_V100=C\:/ti/controlSUITE/libs/math/FPUfastRTS/V100
+version=1
+pathvariable.INSTALLROOT_FPU=C\:/TI/controlSUITE
+pathvariable.CONTROLSUITE_F28M35x_DEVICE_SUPPORT_ROOT=C\:/TI/controlSUITE/device_support/F28M35x/v100
+eclipse.preferences.version=1
+pathvariable.INSTALLROOT_F28M35X_V130=C\:/ti/controlSUITE/device_support/f28m35x/v130

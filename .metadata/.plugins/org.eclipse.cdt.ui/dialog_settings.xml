@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<item value="com.ti.ccstudio.buildDefinitions.C2000.ProjectType" key="com.ti.ccstudio.managedbuild.ui.wizards.project.CCEProjectPropertiesPage.PROJECT_TYPE"/>
+	<section name="outline_presenter_bounds">
+	</section>
+	<section name="!CProjectWizard!">
+		<item value="E:\Doutorado\Sincrotron\Implementacao\DSP_Fonte_10V_10A" key="locationBrowserFilterPath"/>
+	</section>
+	<section name="com.ti.common.project.ui.wizards.ProjectSettingsPage">
+		<item value="" key="CCE.CODEGEN_TOOL_VERSION"/>
+		<item value="28335_RAM_lnk.cmd" key="CCE.LINKER_COMMAND_FILE"/>
+		<item value="TMS320C28XX.F28M35M52C1" key="CCE.DEVICE_VARIANT"/>
+		<item value="" key="CCE.OUTPUT_FORMAT"/>
+		<item value="rts2800_fpu32.lib" key="CCE.RUNTIME_SUPPORT_LIB"/>
+		<item value="" key="CCE.DEVICE_ENDIANNESS"/>
+		<item value="executable" key="OUTPUT_TYPE"/>
+	</section>
+</section>

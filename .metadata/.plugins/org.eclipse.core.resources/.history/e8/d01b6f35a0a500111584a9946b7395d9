@@ -1,0 +1,5 @@
+# FIXED
+
+app_libs/adc_config.obj: ../app_libs/adc_config.c
+
+../app_libs/adc_config.c: 

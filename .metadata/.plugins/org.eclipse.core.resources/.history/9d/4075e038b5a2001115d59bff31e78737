@@ -1,0 +1,39 @@
+################################################################################
+# Automatically-generated file. Do not edit!
+################################################################################
+
+# Add inputs and outputs from these tool invocations to the build variables 
+LIB_SRCS += \
+C:/TI/controlSUITE/device_support/f28m35x/v130/MWare/driverlib/ccs/Debug/driverlib.lib 
+
+C_SRCS += \
+C:/TI/controlSUITE/device_support/f28m35x/v130/F28M35x_examples_Master/enet_uip/m3/enet_uip.c \
+C:/TI/controlSUITE/device_support/f28m35x/v130/F28M35x_examples_Master/enet_uip/m3/httpd.c \
+C:/TI/controlSUITE/device_support/f28m35x/v130/F28M35x_examples_Master/enet_uip/m3/startup_ccs.c 
+
+OBJS += \
+./enet_uip.obj \
+./httpd.obj \
+./startup_ccs.obj 
+
+C_DEPS += \
+./enet_uip.pp \
+./httpd.pp \
+./startup_ccs.pp 
+
+C_DEPS__QTD += \
+".\enet_uip.pp" \
+".\httpd.pp" \
+".\startup_ccs.pp" 
+
+OBJS__QTD += \
+".\enet_uip.obj" \
+".\httpd.obj" \
+".\startup_ccs.obj" 
+
+C_SRCS_QUOTED += \
+"C:/TI/controlSUITE/device_support/f28m35x/v130/F28M35x_examples_Master/enet_uip/m3/enet_uip.c" \
+"C:/TI/controlSUITE/device_support/f28m35x/v130/F28M35x_examples_Master/enet_uip/m3/httpd.c" \
+"C:/TI/controlSUITE/device_support/f28m35x/v130/F28M35x_examples_Master/enet_uip/m3/startup_ccs.c" 
+
+

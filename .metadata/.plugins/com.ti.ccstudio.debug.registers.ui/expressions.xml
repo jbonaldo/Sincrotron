@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<States>
+<Expressions>
+<Expression IMemento.internal.id="pi_io">
+<Format/>
+</Expression>
+<Expression IMemento.internal.id="shm_m2c_read">
+<Format/>
+</Expression>
+<Expression IMemento.internal.id="duty_force">
+<Format/>
+</Expression>
+</Expressions>
+</States>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<cHelpSettings>
+<project name="DSP_Fonte_10V_10A">
+<provider id="RTSCHelpProvider">
+<book enabled="true" title="RTSC Content"/>
+</provider>
+</project>
+<project name="CortexM3">
+<provider id="RTSCHelpProvider">
+<book enabled="true" title="RTSC Content"/>
+</provider>
+</project>
+</cHelpSettings>

@@ -1,0 +1,55 @@
+################################################################################
+# Automatically-generated file. Do not edit!
+################################################################################
+
+# Each subdirectory must supply rules for building sources it contributes
+ti_codes/F28M35x_Adc.obj: E:/Doutorado/Sincrotron/Implementacao/DSP/F28M35x_common/source/F28M35x_Adc.c $(GEN_OPTS) $(GEN_SRCS)
+	@echo 'Building file: $<'
+	@echo 'Invoking: Compiler'
+	"C:/Program Files/Texas Instruments/ccsv4/tools/compiler/c2000/bin/cl2000" -v28 -mt -ml -g --include_path="C:/Program Files/Texas Instruments/ccsv4/tools/compiler/c2000/include" --include_path="E:/Doutorado/Sincrotron/Implementacao/DSP/F28M35x_headers/include" --include_path="E:/Doutorado/Sincrotron/Implementacao/DSP/F28M35x_common/include" --diag_warning=225 --float_support=fpu32 --vcu_support=vcu0 --preproc_with_compile --preproc_dependency="ti_codes/F28M35x_Adc.pp" --obj_directory="ti_codes" $(GEN_OPTS_QUOTED) $(subst #,$(wildcard $(subst $(SPACE),\$(SPACE),$<)),"#")
+	@echo 'Finished building: $<'
+	@echo ' '
+
+ti_codes/F28M35x_DefaultIsr.obj: E:/Doutorado/Sincrotron/Implementacao/DSP/F28M35x_common/source/F28M35x_DefaultIsr.c $(GEN_OPTS) $(GEN_SRCS)
+	@echo 'Building file: $<'
+	@echo 'Invoking: Compiler'
+	"C:/Program Files/Texas Instruments/ccsv4/tools/compiler/c2000/bin/cl2000" -v28 -mt -ml -g --include_path="C:/Program Files/Texas Instruments/ccsv4/tools/compiler/c2000/include" --include_path="E:/Doutorado/Sincrotron/Implementacao/DSP/F28M35x_headers/include" --include_path="E:/Doutorado/Sincrotron/Implementacao/DSP/F28M35x_common/include" --diag_warning=225 --float_support=fpu32 --vcu_support=vcu0 --preproc_with_compile --preproc_dependency="ti_codes/F28M35x_DefaultIsr.pp" --obj_directory="ti_codes" $(GEN_OPTS_QUOTED) $(subst #,$(wildcard $(subst $(SPACE),\$(SPACE),$<)),"#")
+	@echo 'Finished building: $<'
+	@echo ' '
+
+ti_codes/F28M35x_GlobalVariableDefs.obj: E:/Doutorado/Sincrotron/Implementacao/DSP/F28M35x_headers/source/F28M35x_GlobalVariableDefs.c $(GEN_OPTS) $(GEN_SRCS)
+	@echo 'Building file: $<'
+	@echo 'Invoking: Compiler'
+	"C:/Program Files/Texas Instruments/ccsv4/tools/compiler/c2000/bin/cl2000" -v28 -mt -ml -g --include_path="C:/Program Files/Texas Instruments/ccsv4/tools/compiler/c2000/include" --include_path="E:/Doutorado/Sincrotron/Implementacao/DSP/F28M35x_headers/include" --include_path="E:/Doutorado/Sincrotron/Implementacao/DSP/F28M35x_common/include" --diag_warning=225 --float_support=fpu32 --vcu_support=vcu0 --preproc_with_compile --preproc_dependency="ti_codes/F28M35x_GlobalVariableDefs.pp" --obj_directory="ti_codes" $(GEN_OPTS_QUOTED) $(subst #,$(wildcard $(subst $(SPACE),\$(SPACE),$<)),"#")
+	@echo 'Finished building: $<'
+	@echo ' '
+
+ti_codes/F28M35x_PieCtrl.obj: E:/Doutorado/Sincrotron/Implementacao/DSP/F28M35x_common/source/F28M35x_PieCtrl.c $(GEN_OPTS) $(GEN_SRCS)
+	@echo 'Building file: $<'
+	@echo 'Invoking: Compiler'
+	"C:/Program Files/Texas Instruments/ccsv4/tools/compiler/c2000/bin/cl2000" -v28 -mt -ml -g --include_path="C:/Program Files/Texas Instruments/ccsv4/tools/compiler/c2000/include" --include_path="E:/Doutorado/Sincrotron/Implementacao/DSP/F28M35x_headers/include" --include_path="E:/Doutorado/Sincrotron/Implementacao/DSP/F28M35x_common/include" --diag_warning=225 --float_support=fpu32 --vcu_support=vcu0 --preproc_with_compile --preproc_dependency="ti_codes/F28M35x_PieCtrl.pp" --obj_directory="ti_codes" $(GEN_OPTS_QUOTED) $(subst #,$(wildcard $(subst $(SPACE),\$(SPACE),$<)),"#")
+	@echo 'Finished building: $<'
+	@echo ' '
+
+ti_codes/F28M35x_PieVect.obj: E:/Doutorado/Sincrotron/Implementacao/DSP/F28M35x_common/source/F28M35x_PieVect.c $(GEN_OPTS) $(GEN_SRCS)
+	@echo 'Building file: $<'
+	@echo 'Invoking: Compiler'
+	"C:/Program Files/Texas Instruments/ccsv4/tools/compiler/c2000/bin/cl2000" -v28 -mt -ml -g --include_path="C:/Program Files/Texas Instruments/ccsv4/tools/compiler/c2000/include" --include_path="E:/Doutorado/Sincrotron/Implementacao/DSP/F28M35x_headers/include" --include_path="E:/Doutorado/Sincrotron/Implementacao/DSP/F28M35x_common/include" --diag_warning=225 --float_support=fpu32 --vcu_support=vcu0 --preproc_with_compile --preproc_dependency="ti_codes/F28M35x_PieVect.pp" --obj_directory="ti_codes" $(GEN_OPTS_QUOTED) $(subst #,$(wildcard $(subst $(SPACE),\$(SPACE),$<)),"#")
+	@echo 'Finished building: $<'
+	@echo ' '
+
+ti_codes/F28M35x_SysCtrl.obj: E:/Doutorado/Sincrotron/Implementacao/DSP/F28M35x_common/source/F28M35x_SysCtrl.c $(GEN_OPTS) $(GEN_SRCS)
+	@echo 'Building file: $<'
+	@echo 'Invoking: Compiler'
+	"C:/Program Files/Texas Instruments/ccsv4/tools/compiler/c2000/bin/cl2000" -v28 -mt -ml -g --include_path="C:/Program Files/Texas Instruments/ccsv4/tools/compiler/c2000/include" --include_path="E:/Doutorado/Sincrotron/Implementacao/DSP/F28M35x_headers/include" --include_path="E:/Doutorado/Sincrotron/Implementacao/DSP/F28M35x_common/include" --diag_warning=225 --float_support=fpu32 --vcu_support=vcu0 --preproc_with_compile --preproc_dependency="ti_codes/F28M35x_SysCtrl.pp" --obj_directory="ti_codes" $(GEN_OPTS_QUOTED) $(subst #,$(wildcard $(subst $(SPACE),\$(SPACE),$<)),"#")
+	@echo 'Finished building: $<'
+	@echo ' '
+
+ti_codes/F28M35x_usDelay.obj: E:/Doutorado/Sincrotron/Implementacao/DSP/F28M35x_common/source/F28M35x_usDelay.asm $(GEN_OPTS) $(GEN_SRCS)
+	@echo 'Building file: $<'
+	@echo 'Invoking: Compiler'
+	"C:/Program Files/Texas Instruments/ccsv4/tools/compiler/c2000/bin/cl2000" -v28 -mt -ml -g --include_path="C:/Program Files/Texas Instruments/ccsv4/tools/compiler/c2000/include" --include_path="E:/Doutorado/Sincrotron/Implementacao/DSP/F28M35x_headers/include" --include_path="E:/Doutorado/Sincrotron/Implementacao/DSP/F28M35x_common/include" --diag_warning=225 --float_support=fpu32 --vcu_support=vcu0 --preproc_with_compile --preproc_dependency="ti_codes/F28M35x_usDelay.pp" --obj_directory="ti_codes" $(GEN_OPTS_QUOTED) $(subst #,$(wildcard $(subst $(SPACE),\$(SPACE),$<)),"#")
+	@echo 'Finished building: $<'
+	@echo ' '
+
+

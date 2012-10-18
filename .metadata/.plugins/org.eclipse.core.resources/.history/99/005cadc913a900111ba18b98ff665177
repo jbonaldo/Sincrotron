@@ -1,0 +1,268 @@
+/**
+ * Arquivo de configuração dos PWMs
+ * 
+ */
+ 
+ #include "DSP28x_Project.h"
+ #include "F28M35x_EPwm_defines.h"  
+ #include "SFO_V7.h"
+ #include "includes/pwm_config.h"
+ #include "../config.h"
+
+#define PERIODO_TICKS       4000
+
+
+ 
+void pwm1_config(void);
+void pwm2_config(void);
+void InitEPwm1Gpio(void);
+
+
+// The following declarations are required in order to use the SFO library functions:
+int MEP_ScaleFactor; // Global variable used by teh SFO library Result can be used for all HRPWM channels
+                     // This variable is also copied to HRMSTEP register by SFO() function.
+// *ePWM[0] is defined as dummy value not used in the example
+volatile struct EPWM_REGS *ePWM[9] = {  &EPwm1Regs, &EPwm1Regs, &EPwm2Regs, &EPwm3Regs, &EPwm4Regs, &EPwm5Regs, &EPwm6Regs, &EPwm7Regs, &EPwm8Regs};
+  
+ 
+ //HRPWM: ePWM1 to ePWM8
+ 
+ 
+void pwm_config(void)
+{
+    pwm_output_disable();
+    pwm1_config();
+    pwm2_config();
+    InitEPwm1Gpio();
+    InitEPwm2Gpio();
+    
+    pwm_mep_sfo_init();
+    //InitEPwm1Example();
+    
+}
+
+void pwm1_config(void)
+{
+    // Set TBCLK frequency
+    EPwm1Regs.TBCTL.bit.HSPCLKDIV = TB_DIV1;        // TBCLK = SYSCLKOUT
+    EPwm1Regs.TBCTL.bit.CLKDIV = TB_DIV1;
+    
+    EPwm1Regs.TBPRD = PERIODO_TICKS; 
+    EPwm1Regs.TBPHS.half.TBPHS = 0;                 // Set Phase register to zero
+    EPwm1Regs.TBCTL.bit.CTRMODE = TB_COUNT_UPDOWN;  // Symmetrical mode
+    EPwm1Regs.TBCTL.bit.PHSEN = TB_DISABLE;         // Master module
+    EPwm1Regs.TBCTL.bit.SYNCOSEL = TB_CTR_ZERO;     // Sync down-stream module
+    EPwm1Regs.TBCTL.bit.PRDLD = TB_SHADOW;
+    
+    EPwm1Regs.CMPCTL.bit.SHDWAMODE = CC_SHADOW;
+    EPwm1Regs.CMPCTL.bit.SHDWBMODE = CC_SHADOW;
+    EPwm1Regs.CMPCTL.bit.LOADAMODE = CC_CTR_ZERO;   // load on CTR=Zero
+    EPwm1Regs.CMPCTL.bit.LOADBMODE = CC_CTR_ZERO;   // load on CTR=Zero
+    
+    EPwm1Regs.AQCTLA.bit.CAU = AQ_SET;              // set actions for EPWM1A
+    EPwm1Regs.AQCTLA.bit.CAD = AQ_CLEAR;
+    
+    EPwm1Regs.DBCTL.bit.OUT_MODE = DB_FULL_ENABLE;  // enable Dead-band module
+    EPwm1Regs.DBCTL.bit.POLSEL = DB_ACTV_HIC;       // Active Hi complementary
+    EPwm1Regs.DBFED = 50;                           // FED = 50 TBCLKs
+    EPwm1Regs.DBRED = 50;                           // RED = 50 TBCLKs    
+    
+        // Enable SOCA and SOCB 
+    EPwm1Regs.ETSEL.bit.SOCAEN     = 1;             // Enable SOC on A group
+    EPwm1Regs.ETSEL.bit.SOCBEN     = 0;             // Disable SOC on B group
+    EPwm1Regs.ETSEL.bit.SOCASEL    = ET_CTR_PRDZERO;// Select SOC from CMPA/CMPC on up count
+    EPwm1Regs.ETPS.bit.SOCAPRD = ET_1ST;            // Generate SOCA pulse on every 3rd event
+    EPwm1Regs.ETPS.bit.SOCPSSEL = 0;    
+
+    //Trip Zone - Utilizado para poder desabilitar o PWM (neste caso, via software)
+    EPwm1Regs.TZSEL.bit.OSHT1 = 1;                   // Saida do pwm vai para o estado definido (abaixo) quando ocorre um evento de Trip   
+    EPwm1Regs.TZCTL.bit.TZA = TZ_FORCE_LO;           // EPWM1A em estado de Alta Impedancia
+    EPwm1Regs.TZCTL.bit.TZB = TZ_FORCE_LO;           // EPWM1B em estado de Alta Impedancia    
+    
+    
+    EPwm1Regs.CMPA.half.CMPA = PERIODO_TICKS /2;                  // adjust duty for output EPWM1A
+}
+
+void pwm2_config(void)
+{
+    // Set TBCLK frequency
+    EPwm2Regs.TBCTL.bit.HSPCLKDIV = TB_DIV1;        // TBCLK = SYSCLKOUT
+    EPwm2Regs.TBCTL.bit.CLKDIV = TB_DIV1;
+    
+    EPwm2Regs.TBPRD = PERIODO_TICKS; 
+    EPwm2Regs.TBPHS.half.TBPHS = EPwm2Regs.TBPRD;   // Set Phase register to zero
+    EPwm2Regs.TBCTL.bit.CTRMODE = TB_COUNT_UPDOWN;  // Symmetrical mode
+    EPwm2Regs.TBCTL.bit.PHSEN = TB_ENABLE;          // Slave module
+    EPwm2Regs.TBCTL.bit.SYNCOSEL = TB_SYNC_IN;      // Aquire sync from master module (ePwm1)
+    EPwm2Regs.TBCTL.bit.PHSDIR = TB_DOWN;             // Count DOWN on sync (=180 deg)
+    EPwm2Regs.TBCTL.bit.PRDLD = TB_SHADOW;
+    
+    EPwm2Regs.CMPCTL.bit.SHDWAMODE = CC_SHADOW;
+    EPwm2Regs.CMPCTL.bit.SHDWBMODE = CC_SHADOW;
+    EPwm2Regs.CMPCTL.bit.LOADAMODE = CC_CTR_ZERO;   // load on CTR=Zero
+    EPwm2Regs.CMPCTL.bit.LOADBMODE = CC_CTR_ZERO;   // load on CTR=Zero
+    
+    EPwm2Regs.AQCTLA.bit.CAU = AQ_SET;              // set actions for EPWM1A
+    EPwm2Regs.AQCTLA.bit.CAD = AQ_CLEAR;
+    
+    EPwm2Regs.DBCTL.bit.OUT_MODE = DB_FULL_ENABLE;  // enable Dead-band module
+    EPwm2Regs.DBCTL.bit.POLSEL = DB_ACTV_HIC;       // Active Hi complementary
+    EPwm2Regs.DBFED = 50;                           // FED = 50 TBCLKs
+    EPwm2Regs.DBRED = 50;                           // RED = 50 TBCLKs    
+    
+    
+    // Enable SOCA and SOCB 
+//    EPwm2Regs.ETSEL.bit.SOCAEN     = 1;             // Enable SOC on A group
+//    EPwm2Regs.ETSEL.bit.SOCBEN     = 1;             // Enable SOC on B group
+//    EPwm2Regs.ETSEL.bit.SOCASEL    = ET_CTR_ZERO;   // Select SOC from CMPA/CMPC on up count
+//    EPwm2Regs.ETSEL.bit.SOCBSEL    = ET_CTR_PRD;    // Select SOC from CMPB/CMPD on up count
+//    EPwm2Regs.ETSEL.bit.SOCASELCMP = 0x0;           // 0->CMPA; 1->CMPC 
+//    EPwm2Regs.ETSEL.bit.SOCBSELCMP = 0x0;           // 0->CMPB; 1->CMPD
+//                                                 
+//    EPwm2Regs.ETPS.bit.SOCAPRD = ET_1ST;            // Generate SOCA pulse on every 3rd event
+//    EPwm2Regs.ETPS.bit.SOCBPRD = ET_1ST;            // Generate SOCA pulse on every 3rd event
+    
+    
+    //Trip Zone - Utilizado para poder desabilitar o PWM (neste caso, via software)
+    EPwm2Regs.TZSEL.bit.OSHT1 = 1;                   // Saida do pwm vai para o estado definido (abaixo) quando ocorre um evento de Trip   
+    EPwm2Regs.TZCTL.bit.TZA = TZ_FORCE_LO;           // EPWM1A em estado de Alta Impedancia
+    EPwm2Regs.TZCTL.bit.TZB = TZ_FORCE_LO;           // EPWM1B em estado de Alta Impedancia    
+    
+    
+    EPwm2Regs.CMPA.half.CMPA = PERIODO_TICKS / 2;                  // adjust duty for output EPWM1A
+}
+  
+  
+void pwm_output_disable(void)
+{
+    EALLOW;
+    //Força evento OneShot, que foi programado para desabilitar as saidas do pwm
+    //Por enquanto, os pinos serão colocados em alta impedância
+    EPwm1Regs.TZFRC.bit.OST = 1;
+    EPwm2Regs.TZFRC.bit.OST = 1;
+    
+    EDIS;
+}
+
+void pwm_output_enable(void)
+{
+    EALLOW;
+    //Limpa a flag de OneShot, liberando a saída dos pwms 
+    EPwm1Regs.TZCLR.bit.OST = 1;
+    EPwm2Regs.TZCLR.bit.OST = 1;
+    
+    EDIS;
+}    
+
+int pwm_mep_sfo_tunning(void)
+{
+    int status;
+    
+    status = SFO(); // in background, MEP calibration module continuously updates MEP_ScaleFactor
+    if (status == SFO_ERROR) {
+        //error();   // SFO function returns 2 if an error occurs & # of MEP steps/coarse step
+    }              // exceeds maximum of 255.
+}
+
+void pwm_mep_sfo_init(void)
+{
+    int status;
+    
+    while  (status== SFO_INCOMPLETE){  // Call until complete
+        status = SFO();
+        if (status == SFO_ERROR) {
+            while(1);    // SFO function returns 2 if an error occurs & # of MEP steps/coarse step
+        }              // exceeds maximum of 255.
+    }
+}
+
+void InitEPwmGpio(void)
+{
+    InitEPwm1Gpio();
+    InitEPwm2Gpio();
+    InitEPwm3Gpio();
+    InitEPwm4Gpio();
+    InitEPwm5Gpio();
+}
+
+void InitEPwm1Gpio(void)
+{
+    EALLOW;
+
+    // Pull-up enable should be set in the
+    // GPIO_O_PUR register in the M3 code.
+    GpioCtrlRegs.GPAMUX1.bit.GPIO0 = 1;   // Configure GPIO0 as EPWM1A
+    GpioCtrlRegs.GPAMUX1.bit.GPIO1 = 1;   // Configure GPIO1 as EPWM1B
+
+    EDIS;
+}
+
+void InitEPwm2Gpio(void)
+{
+    EALLOW;
+
+    // Pull-up enable should be set in the
+    // GPIO_O_PUR register in the M3 code.
+    GpioCtrlRegs.GPAMUX1.bit.GPIO2 = 1;   // Configure GPIO2 as EPWM2A
+    GpioCtrlRegs.GPAMUX1.bit.GPIO3 = 1;   // Configure GPIO3 as EPWM2B
+
+    EDIS;
+}
+
+void InitEPwm3Gpio(void)
+{
+    EALLOW;
+
+    // Pull-up enable should be set in the
+    // GPIO_O_PUR register in the M3 code.
+
+    // This specifies which of the possible GPIO pins will be EPWM3 functional pins.
+// Comment out other unwanted lines.
+
+    GpioCtrlRegs.GPAMUX1.bit.GPIO4 = 1;   // Configure GPIO4 as EPWM3A
+    GpioCtrlRegs.GPAMUX1.bit.GPIO5 = 1;   // Configure GPIO5 as EPWM3B
+
+    EDIS;
+}
+
+void InitEPwm4Gpio(void)
+{
+    EALLOW;
+
+/* Enable internal pull-up for the selected pins */
+
+// Pull-up enable should be set in the
+// GPIO_O_PUR register in the M3 code.
+
+/* Configure EPWM-4 pins using GPIO regs*/
+
+// This specifies which of the possible GPIO pins will be EPWM4 functional pins.
+// Comment out other unwanted lines.
+
+    GpioCtrlRegs.GPAMUX1.bit.GPIO6 = 1;   // Configure GPIO6 as EPWM4A
+    GpioCtrlRegs.GPAMUX1.bit.GPIO7 = 1;   // Configure GPIO7 as EPWM4B
+
+    EDIS;
+}
+
+void InitEPwm5Gpio(void)
+{
+    EALLOW;
+
+/* Enable internal pull-up for the selected pins */
+
+// Pull-up enable should be set in the
+// GPIO_O_PUR register in the M3 code.
+
+/* Configure EPWM-5 pins using GPIO regs*/
+
+// This specifies which of the possible GPIO pins will be EPWM5 functional pins.
+// Comment out other unwanted lines.
+
+    GpioCtrlRegs.GPAMUX1.bit.GPIO8 = 1;   // Configure GPIO8 as EPWM5A
+    GpioCtrlRegs.GPAMUX1.bit.GPIO9 = 1;   // Configure GPIO9 as EPWM5B
+
+    EDIS;
+}
+  
+

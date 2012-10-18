@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<java version="1.6.0_26" class="java.beans.XMLDecoder"> 
+ <object class="com.ti.dvt.datamodel.solution.SolutionManager$PersistState"> 
+  <void property="defaultSolution"> 
+   <string>C:/Program Files (x86)/Texas Instruments/ccsv4/eclipse/..\dvt\RTA6\solutions\cce_rta6</string> 
+  </void> 
+  <void property="openedSolutions"> 
+   <void method="add"> 
+    <string>C:/Program Files (x86)/Texas Instruments/ccsv4/eclipse/..\dvt\RTA6\solutions\cce_rta6</string> 
+   </void> 
+   <void method="add"> 
+    <string>/C:/Program Files (x86)/Texas Instruments/ccsv4/eclipse/..\dvt\CodeGen\solutions\CodeGenCoverage</string> 
+   </void> 
+   <void method="add"> 
+    <string>C:\Arquivos\Doutorado\Sincrotron\Implementacao\.metadata\.plugins\com.ti.dvt.graph.visualization\savedSolutions\\1\singletime</string> 
+   </void> 
+   <void method="add"> 
+    <string>C:\Arquivos\Doutorado\Sincrotron\Implementacao\.metadata\.plugins\com.ti.dvt.graph.visualization\savedSolutions\\2\dualtime</string> 
+   </void> 
+   <void method="add"> 
+    <string>C:\Arquivos\Doutorado\Sincrotron\Implementacao\.metadata\.plugins\com.ti.dvt.graph.visualization\savedSolutions\1\singletime</string> 
+   </void> 
+   <void method="add"> 
+    <string>C:\Arquivos\Doutorado\Sincrotron\Implementacao\.metadata\.plugins\com.ti.dvt.graph.visualization\savedSolutions\2\dualtime</string> 
+   </void> 
+  </void> 
+ </object> 
+</java> 

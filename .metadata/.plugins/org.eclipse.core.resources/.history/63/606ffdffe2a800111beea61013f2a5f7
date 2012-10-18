@@ -1,0 +1,42 @@
+/**
+ * Arquivo de configuração dos PWMs
+ * 
+ */
+ 
+ #include "DSP28x_Project.h"
+ #include "F28M35x_EPwm_defines.h"  
+ #include "includes/adc_config.h"
+ #include "../config.h"
+
+
+
+
+void ConfigAdc1( void )
+{
+    // Configure ADC
+    EALLOW;
+    
+    Adc1Regs.ADCCTL2.bit.ADCNONOVERLAP = 1;     // Set ADC to non-overlap mode
+    
+    Adc1Regs.ADCCTL1.bit.INTPULSEPOS   = 1;     // EOC trips after conversion result is latched
+    Adc1Regs.INTSEL1N2.bit.INT1E       = 1;     // Enabled ADCINT1
+    Adc1Regs.INTSEL1N2.bit.INT1CONT    = 0;     // Disable ADCINT1 Continuous mode
+    Adc1Regs.INTSEL1N2.bit.INT1SEL     = 1;     // setup EOC1 to trigger ADCINT1
+ 
+    // Select ADC input channels                                              
+    Adc1Regs.ADCSOC0CTL.bit.CHSEL      = 0;     // set SOC0 channel select to ADC1A0
+    Adc1Regs.ADCSOC1CTL.bit.CHSEL      = 2;     // set SOC1 channel select to ADC1A2
+    
+    // Selecing triggers for SOCs
+    AnalogSysctrlRegs.TRIG5SEL.all     = 5;     // Assigning EPWM1SOCA to TRIGGER 5 of analog subsystem
+    AnalogSysctrlRegs.TRIG6SEL.all     = 6;     // Assigning EPWM1SOCB to TRIGGER 6 of analog subsystem
+    
+    Adc1Regs.ADCSOC0CTL.bit.TRIGSEL    = 9;     // Assign EPWM1SOCA to SOC0 TRIGSEL 
+    Adc1Regs.ADCSOC1CTL.bit.TRIGSEL    = 10;    // Assign EPWM1SOCB to SOC1 TRIGSEL
+    
+    // Set S/H window of 7 ADC clock cycles                                            
+    Adc1Regs.ADCSOC0CTL.bit.ACQPS      = 6;     // S/H = ACQPS + 1     
+    Adc1Regs.ADCSOC1CTL.bit.ACQPS      = 6;     
+    
+    EDIS;
+}

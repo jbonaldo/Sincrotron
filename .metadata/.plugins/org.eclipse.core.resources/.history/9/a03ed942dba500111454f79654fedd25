@@ -1,0 +1,69 @@
+# FIXED
+
+main.obj: ../main.c
+main.obj: E:/Doutorado/Sincrotron/Implementacao/DSP/F28M35x_common/include/DSP28x_Project.h
+main.obj: E:/Doutorado/Sincrotron/Implementacao/DSP/F28M35x_headers/include/F28M35x_Device.h
+main.obj: E:/Doutorado/Sincrotron/Implementacao/DSP/F28M35x_headers/include/F28M35x_Adc.h
+main.obj: E:/Doutorado/Sincrotron/Implementacao/DSP/F28M35x_headers/include/F28M35x_AnalogSysCtrl.h
+main.obj: E:/Doutorado/Sincrotron/Implementacao/DSP/F28M35x_headers/include/F28M35x_Comp.h
+main.obj: E:/Doutorado/Sincrotron/Implementacao/DSP/F28M35x_headers/include/F28M35x_CpuTimers.h
+main.obj: E:/Doutorado/Sincrotron/Implementacao/DSP/F28M35x_headers/include/F28M35x_DevEmu.h
+main.obj: E:/Doutorado/Sincrotron/Implementacao/DSP/F28M35x_headers/include/F28M35x_Dma.h
+main.obj: E:/Doutorado/Sincrotron/Implementacao/DSP/F28M35x_headers/include/F28M35x_Ecap.h
+main.obj: E:/Doutorado/Sincrotron/Implementacao/DSP/F28M35x_headers/include/F28M35x_Epwm.h
+main.obj: E:/Doutorado/Sincrotron/Implementacao/DSP/F28M35x_headers/include/F28M35x_Eqep.h
+main.obj: E:/Doutorado/Sincrotron/Implementacao/DSP/F28M35x_headers/include/F28M35x_Flash.h
+main.obj: E:/Doutorado/Sincrotron/Implementacao/DSP/F28M35x_headers/include/F28M35x_Gpio.h
+main.obj: E:/Doutorado/Sincrotron/Implementacao/DSP/F28M35x_headers/include/F28M35x_I2c.h
+main.obj: E:/Doutorado/Sincrotron/Implementacao/DSP/F28M35x_headers/include/F28M35x_Ipc.h
+main.obj: E:/Doutorado/Sincrotron/Implementacao/DSP/F28M35x_headers/include/F28M35x_Mcbsp.h
+main.obj: E:/Doutorado/Sincrotron/Implementacao/DSP/F28M35x_headers/include/F28M35x_NmiIntrupt.h
+main.obj: E:/Doutorado/Sincrotron/Implementacao/DSP/F28M35x_headers/include/F28M35x_PieCtrl.h
+main.obj: E:/Doutorado/Sincrotron/Implementacao/DSP/F28M35x_headers/include/F28M35x_PieVect.h
+main.obj: E:/Doutorado/Sincrotron/Implementacao/DSP/F28M35x_headers/include/F28M35x_Ram.h
+main.obj: E:/Doutorado/Sincrotron/Implementacao/DSP/F28M35x_headers/include/F28M35x_Sci.h
+main.obj: E:/Doutorado/Sincrotron/Implementacao/DSP/F28M35x_headers/include/F28M35x_Spi.h
+main.obj: E:/Doutorado/Sincrotron/Implementacao/DSP/F28M35x_headers/include/F28M35x_Sysctrl.h
+main.obj: E:/Doutorado/Sincrotron/Implementacao/DSP/F28M35x_headers/include/F28M35x_XIntrupt.h
+main.obj: E:/Doutorado/Sincrotron/Implementacao/DSP/F28M35x_common/include/F28M35x_Examples.h
+main.obj: E:/Doutorado/Sincrotron/Implementacao/DSP/F28M35x_common/include/F28M35x_GlobalPrototypes.h
+main.obj: E:/Doutorado/Sincrotron/Implementacao/DSP/F28M35x_common/include/F28M35x_EPwm_defines.h
+main.obj: E:/Doutorado/Sincrotron/Implementacao/DSP/F28M35x_common/include/F28M35x_I2c_defines.h
+main.obj: E:/Doutorado/Sincrotron/Implementacao/DSP/F28M35x_common/include/F28M35x_Dma_defines.h
+main.obj: E:/Doutorado/Sincrotron/Implementacao/DSP/F28M35x_common/include/F28M35x_AnalogSysCtrl_defines.h
+main.obj: E:/Doutorado/Sincrotron/Implementacao/DSP/F28M35x_common/include/F28M35x_DefaultISR.h
+main.obj: ../app_libs/includes/gpio_config.h
+
+../main.c: 
+E:/Doutorado/Sincrotron/Implementacao/DSP/F28M35x_common/include/DSP28x_Project.h: 
+E:/Doutorado/Sincrotron/Implementacao/DSP/F28M35x_headers/include/F28M35x_Device.h: 
+E:/Doutorado/Sincrotron/Implementacao/DSP/F28M35x_headers/include/F28M35x_Adc.h: 
+E:/Doutorado/Sincrotron/Implementacao/DSP/F28M35x_headers/include/F28M35x_AnalogSysCtrl.h: 
+E:/Doutorado/Sincrotron/Implementacao/DSP/F28M35x_headers/include/F28M35x_Comp.h: 
+E:/Doutorado/Sincrotron/Implementacao/DSP/F28M35x_headers/include/F28M35x_CpuTimers.h: 
+E:/Doutorado/Sincrotron/Implementacao/DSP/F28M35x_headers/include/F28M35x_DevEmu.h: 
+E:/Doutorado/Sincrotron/Implementacao/DSP/F28M35x_headers/include/F28M35x_Dma.h: 
+E:/Doutorado/Sincrotron/Implementacao/DSP/F28M35x_headers/include/F28M35x_Ecap.h: 
+E:/Doutorado/Sincrotron/Implementacao/DSP/F28M35x_headers/include/F28M35x_Epwm.h: 
+E:/Doutorado/Sincrotron/Implementacao/DSP/F28M35x_headers/include/F28M35x_Eqep.h: 
+E:/Doutorado/Sincrotron/Implementacao/DSP/F28M35x_headers/include/F28M35x_Flash.h: 
+E:/Doutorado/Sincrotron/Implementacao/DSP/F28M35x_headers/include/F28M35x_Gpio.h: 
+E:/Doutorado/Sincrotron/Implementacao/DSP/F28M35x_headers/include/F28M35x_I2c.h: 
+E:/Doutorado/Sincrotron/Implementacao/DSP/F28M35x_headers/include/F28M35x_Ipc.h: 
+E:/Doutorado/Sincrotron/Implementacao/DSP/F28M35x_headers/include/F28M35x_Mcbsp.h: 
+E:/Doutorado/Sincrotron/Implementacao/DSP/F28M35x_headers/include/F28M35x_NmiIntrupt.h: 
+E:/Doutorado/Sincrotron/Implementacao/DSP/F28M35x_headers/include/F28M35x_PieCtrl.h: 
+E:/Doutorado/Sincrotron/Implementacao/DSP/F28M35x_headers/include/F28M35x_PieVect.h: 
+E:/Doutorado/Sincrotron/Implementacao/DSP/F28M35x_headers/include/F28M35x_Ram.h: 
+E:/Doutorado/Sincrotron/Implementacao/DSP/F28M35x_headers/include/F28M35x_Sci.h: 
+E:/Doutorado/Sincrotron/Implementacao/DSP/F28M35x_headers/include/F28M35x_Spi.h: 
+E:/Doutorado/Sincrotron/Implementacao/DSP/F28M35x_headers/include/F28M35x_Sysctrl.h: 
+E:/Doutorado/Sincrotron/Implementacao/DSP/F28M35x_headers/include/F28M35x_XIntrupt.h: 
+E:/Doutorado/Sincrotron/Implementacao/DSP/F28M35x_common/include/F28M35x_Examples.h: 
+E:/Doutorado/Sincrotron/Implementacao/DSP/F28M35x_common/include/F28M35x_GlobalPrototypes.h: 
+E:/Doutorado/Sincrotron/Implementacao/DSP/F28M35x_common/include/F28M35x_EPwm_defines.h: 
+E:/Doutorado/Sincrotron/Implementacao/DSP/F28M35x_common/include/F28M35x_I2c_defines.h: 
+E:/Doutorado/Sincrotron/Implementacao/DSP/F28M35x_common/include/F28M35x_Dma_defines.h: 
+E:/Doutorado/Sincrotron/Implementacao/DSP/F28M35x_common/include/F28M35x_AnalogSysCtrl_defines.h: 
+E:/Doutorado/Sincrotron/Implementacao/DSP/F28M35x_common/include/F28M35x_DefaultISR.h: 
+../app_libs/includes/gpio_config.h: 

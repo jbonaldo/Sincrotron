@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<launchConfiguration type="com.ti.ccstudio.debug.core.CCELaunchType">
+<stringAttribute key="com.ti.ccstudio.debug.core.BUILD_CONFIGURATION" value="Flash"/>
+<stringAttribute key="org.eclipse.cdt.launch.GLOBAL_VARIABLES" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;no&quot;?&gt;&#13;&#10;&lt;globalVariableList/&gt;&#13;&#10;"/>
+<booleanAttribute key="org.eclipse.debug.ui.ATTR_LAUNCH_IN_BACKGROUND" value="false"/>
+<mapAttribute key="com.ti.ccstudio.debug.core.VARIABLE_STATE"/>
+<stringAttribute key="CCEDebugOptions.CPU_NAME" value="Texas Instruments XDS100v2 USB Emulator_0/Cortex_M3_0"/>
+<stringAttribute key="CCEDebugOptions.DEBUG_PROPERTIES.Texas Instruments XDS100v2 USB Emulator_0/Cortex_M3_0" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;no&quot; ?&gt;&#10;&lt;PropertyValues&gt;&#10;&#10;  &lt;property id=&quot;ConnectOnStartup&quot;&gt;&#10;    &lt;curValue&gt;1&lt;/curValue&gt;&#10;  &lt;/property&gt;&#10;&#10;&lt;/PropertyValues&gt;&#10;"/>
+<stringAttribute key="org.eclipse.cdt.launch.DEBUGGER_ID" value="com.ti.ccstudio.debug.core.CCEDebugger"/>
+<stringAttribute key="com.ti.ccstudio.debug.core.DISPLAY_NAME_FORMAT" value="enet_uip_m3 [Flash] - {0}"/>
+<stringAttribute key="CCEDebugOptions.CPU_ISA" value="Cortex_M3"/>
+<stringAttribute key="org.eclipse.cdt.launch.DEBUGGER_START_MODE" value="run"/>
+<stringAttribute key="com.ti.ccstudio.debug.core.MRU_PROGRAM_NAME" value="C:\TI\controlSUITE\device_support\f28m35x\v130\F28M35x_examples_Master\enet_uip\m3\ccs\Flash\enet_uip.out"/>
+<stringAttribute key="org.eclipse.cdt.launch.PROGRAM_NAME" value="Flash/enet_uip.out"/>
+<stringAttribute key="com.ti.ccstudio.debug.core.MRU_MODULES" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;no&quot;?&gt;&#13;&#10;&lt;modules&gt;&#13;&#10;&lt;module name=&quot;C:\TI\controlSUITE\device_support\f28m35x\v130\F28M35x_examples_Master\enet_uip\m3\ccs\Flash\enet_uip.out&quot; time=&quot;Mon May 14 18:56:03 BRT 2012&quot; time_long=&quot;1337032563765&quot;/&gt;&#13;&#10;&lt;/modules&gt;&#13;&#10;"/>
+<stringAttribute key="CCEDebugOptions.TARGET_CONFIGURATION_OPTION" value="full"/>
+<stringAttribute key="CCEDebugOptions.CPU_RESOLVE_OPTION" value="first_compatible"/>
+<stringAttribute key="CCEDebugOptions.TARGET_CONFIGURATION_FILE" value="C:\TI\controlSUITE\device_support\f28m35x\v130\F28M35x_examples_Master\enet_uip\m3\ccs\NewTargetConfiguration.ccxml"/>
+<stringAttribute key="org.eclipse.cdt.launch.PROJECT_ATTR" value="enet_uip_m3"/>
+<stringAttribute key="org.eclipse.debug.ui.DISPLAY_NAME" value="enet_uip_m3 [Flash] - Texas Instruments XDS100v2 USB Emulator_0/Cortex_M3_0"/>
+<stringAttribute key="CCEDebugOptions.LOADING_OPTION" value="program"/>
+<stringAttribute key="org.eclipse.cdt.launch.DEBUGGER_REGISTER_GROUPS" value=""/>
+<stringAttribute key="CCEDebugOptions.DEBUG_PROPERTIES.Texas Instruments XDS100v2 USB Emulator_0/C28xx_0" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;no&quot; ?&gt;&#10;&lt;PropertyValues&gt;&#10;&#10;  &lt;property id=&quot;ConnectOnStartup&quot;&gt;&#10;    &lt;curValue&gt;1&lt;/curValue&gt;&#10;  &lt;/property&gt;&#10;&#10;&lt;/PropertyValues&gt;&#10;"/>
+<stringAttribute key="org.eclipse.cdt.launch.MEMORY_BLOCKS" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;no&quot;?&gt;&#13;&#10;&lt;memoryBlockExpressionList/&gt;&#13;&#10;"/>
+<booleanAttribute key="com.ti.ccstudio.debug.core.MRU_PROGRAM_S_ONLY" value="false"/>
+</launchConfiguration>

@@ -1,0 +1,39 @@
+################################################################################
+# Automatically-generated file. Do not edit!
+################################################################################
+
+# Add inputs and outputs from these tool invocations to the build variables 
+CMD_SRCS += \
+../28335_RAM_lnk.cmd 
+
+C_SRCS += \
+../adc_config.c \
+../main.c \
+../pwm_config.c 
+
+OBJS += \
+./adc_config.obj \
+./main.obj \
+./pwm_config.obj 
+
+C_DEPS += \
+./adc_config.pp \
+./main.pp \
+./pwm_config.pp 
+
+C_DEPS__QTD += \
+".\adc_config.pp" \
+".\main.pp" \
+".\pwm_config.pp" 
+
+OBJS__QTD += \
+".\adc_config.obj" \
+".\main.obj" \
+".\pwm_config.obj" 
+
+C_SRCS_QUOTED += \
+"../adc_config.c" \
+"../main.c" \
+"../pwm_config.c" 
+
+

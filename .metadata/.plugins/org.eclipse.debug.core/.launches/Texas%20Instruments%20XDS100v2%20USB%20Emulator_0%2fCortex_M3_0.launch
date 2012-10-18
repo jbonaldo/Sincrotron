@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<launchConfiguration type="com.ti.ccstudio.debug.core.CCEProjectlessLaunchType">
+<stringAttribute key="org.eclipse.cdt.launch.GLOBAL_VARIABLES" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;no&quot;?&gt;&#13;&#10;&lt;globalVariableList/&gt;&#13;&#10;"/>
+<booleanAttribute key="org.eclipse.debug.ui.ATTR_LAUNCH_IN_BACKGROUND" value="false"/>
+<mapAttribute key="com.ti.ccstudio.debug.core.VARIABLE_STATE"/>
+<stringAttribute key="org.eclipse.debug.core.source_locator_id" value="com.ti.ccstudio.debug.core.sourceLocator"/>
+<stringAttribute key="CCEDebugOptions.CPU_NAME" value="Texas Instruments XDS100v2 USB Emulator_0/Cortex_M3_0"/>
+<stringAttribute key="CCEDebugOptions.DEBUG_PROPERTIES.Texas Instruments XDS100v2 USB Emulator_0/Cortex_M3_0" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;no&quot; ?&gt;&#10;&lt;PropertyValues&gt;&#10;&#10;  &lt;property id=&quot;EnableInstalledBreakpoint&quot;&gt;&#10;    &lt;curValue&gt;0&lt;/curValue&gt;&#10;  &lt;/property&gt;&#10;&#10;&lt;/PropertyValues&gt;&#10;"/>
+<stringAttribute key="org.eclipse.debug.core.source_locator_memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;no&quot;?&gt;&#13;&#10;&lt;sourceLookupDirector&gt;&#13;&#10;&lt;sourceContainers duplicates=&quot;false&quot;&gt;&#13;&#10;&lt;container memento=&quot;&amp;lt;?xml version=&amp;quot;1.0&amp;quot; encoding=&amp;quot;UTF-8&amp;quot; standalone=&amp;quot;no&amp;quot;?&amp;gt;&amp;#13;&amp;#10;&amp;lt;default/&amp;gt;&amp;#13;&amp;#10;&quot; typeId=&quot;org.eclipse.debug.core.containerType.default&quot;/&gt;&#13;&#10;&lt;/sourceContainers&gt;&#13;&#10;&lt;/sourceLookupDirector&gt;&#13;&#10;"/>
+<stringAttribute key="org.eclipse.cdt.launch.DEBUGGER_ID" value="com.ti.ccstudio.debug.core.CCEDebugger"/>
+<stringAttribute key="CCEDebugOptions.CPU_ISA" value="Cortex_M3"/>
+<stringAttribute key="org.eclipse.cdt.launch.DEBUGGER_START_MODE" value="run"/>
+<stringAttribute key="com.ti.ccstudio.debug.core.MRU_PROGRAM_NAME" value="C:\Arquivos\Doutorado\Sincrotron\Implementacao\CortexM3\Debug\CortexM3.out"/>
+<stringAttribute key="com.ti.ccstudio.debug.core.MRU_MODULES" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;no&quot;?&gt;&#13;&#10;&lt;modules&gt;&#13;&#10;&lt;module name=&quot;C:\TI\controlSUITE\development_kits\TemplateProjects\F28M35x_controlCARD\RT_Sine_FIR_FFT\m3\ccs\Debug\RT_SineFIRFFT_m3.out&quot; time=&quot;Wed May 23 13:04:31 BRT 2012&quot; time_long=&quot;1337789071296&quot;/&gt;&#13;&#10;&lt;module name=&quot;C:\TI\controlSUITE\device_support\f28m35x\v130\F28M35x_examples_Dual\blinky\m3\ccs\Flash\blinky_dc_m3.out&quot; time=&quot;Thu May 24 13:47:11 BRT 2012&quot; time_long=&quot;1337878031640&quot;/&gt;&#13;&#10;&lt;module name=&quot;E:\Doutorado\Sincrotron\Implementacao\CortexM3\Debug\CortexM3.out&quot; time=&quot;Thu May 24 18:53:22 BRT 2012&quot; time_long=&quot;1337896402390&quot;/&gt;&#13;&#10;&lt;module name=&quot;C:\TI\controlSUITE\device_support\f28m35x\v130\F28M35x_examples_Control\setup_m3\m3\ccs\Flash\setup_m3.out&quot; time=&quot;Mon Aug 27 17:34:45 BRT 2012&quot; time_long=&quot;1346099685689&quot;/&gt;&#13;&#10;&lt;module name=&quot;C:\Arquivos\Doutorado\Sincrotron\Implementacao\CortexM3\Debug\CortexM3.out&quot; time=&quot;Wed Oct 03 14:11:59 BRT 2012&quot; time_long=&quot;1349284319124&quot;/&gt;&#13;&#10;&lt;/modules&gt;&#13;&#10;"/>
+<stringAttribute key="CCEDebugOptions.TARGET_CONFIGURATION_OPTION" value="full"/>
+<stringAttribute key="CCEDebugOptions.CPU_RESOLVE_OPTION" value="exact"/>
+<stringAttribute key="CCEDebugOptions.TARGET_CONFIGURATION_FILE" value="C:/Arquivos/Doutorado/Sincrotron/Implementacao/CortexM3/CortexM3.ccxml"/>
+<stringAttribute key="org.eclipse.cdt.launch.DEBUGGER_REGISTER_GROUPS" value=""/>
+<stringAttribute key="org.eclipse.cdt.launch.MEMORY_BLOCKS" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;no&quot;?&gt;&#13;&#10;&lt;memoryBlockExpressionList/&gt;&#13;&#10;"/>
+<booleanAttribute key="com.ti.ccstudio.debug.core.MRU_PROGRAM_S_ONLY" value="false"/>
+</launchConfiguration>

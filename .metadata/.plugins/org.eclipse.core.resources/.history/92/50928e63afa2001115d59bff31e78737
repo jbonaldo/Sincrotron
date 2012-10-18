@@ -1,0 +1,27 @@
+################################################################################
+# Automatically-generated file. Do not edit!
+################################################################################
+
+# Each subdirectory must supply rules for building sources it contributes
+enet_uip.obj: C:/TI/controlSUITE/device_support/f28m35x/v130/F28M35x_examples_Master/enet_uip/m3/enet_uip.c $(GEN_OPTS) $(GEN_SRCS)
+	@echo 'Building file: $<'
+	@echo 'Invoking: Compiler'
+	"C:/Program Files/Texas Instruments/ccsv4/tools/compiler/tms470/bin/cl470" -mv7M3 -g --gcc --define=ccs --define="_FLASH" --define=PART_LM3S9B96 --include_path="C:/Program Files/Texas Instruments/ccsv4/tools/compiler/tms470/include" --include_path="C:/TI/controlSUITE/device_support/f28m35x/v130/F28M35x_examples_Master/enet_uip/m3" --include_path="C:/TI/controlSUITE/device_support/f28m35x/v130/MWare" --include_path="C:/TI/controlSUITE/device_support/f28m35x/v130/MWare/third_party/uip-1.0" --include_path="C:/TI/controlSUITE/device_support/f28m35x/v130/MWare/third_party/uip-1.0/uip" --include_path="C:/TI/controlSUITE/device_support/f28m35x/v130/MWare/third_party/uip-1.0/apps" --diag_warning=225 -me --abi=eabi --code_state=16 --ual --preproc_with_compile --preproc_dependency="enet_uip.pp" $(GEN_OPTS_QUOTED) $(subst #,$(wildcard $(subst $(SPACE),\$(SPACE),$<)),"#")
+	@echo 'Finished building: $<'
+	@echo ' '
+
+httpd.obj: C:/TI/controlSUITE/device_support/f28m35x/v130/F28M35x_examples_Master/enet_uip/m3/httpd.c $(GEN_OPTS) $(GEN_SRCS)
+	@echo 'Building file: $<'
+	@echo 'Invoking: Compiler'
+	"C:/Program Files/Texas Instruments/ccsv4/tools/compiler/tms470/bin/cl470" -mv7M3 -g --gcc --define=ccs --define="_FLASH" --define=PART_LM3S9B96 --include_path="C:/Program Files/Texas Instruments/ccsv4/tools/compiler/tms470/include" --include_path="C:/TI/controlSUITE/device_support/f28m35x/v130/F28M35x_examples_Master/enet_uip/m3" --include_path="C:/TI/controlSUITE/device_support/f28m35x/v130/MWare" --include_path="C:/TI/controlSUITE/device_support/f28m35x/v130/MWare/third_party/uip-1.0" --include_path="C:/TI/controlSUITE/device_support/f28m35x/v130/MWare/third_party/uip-1.0/uip" --include_path="C:/TI/controlSUITE/device_support/f28m35x/v130/MWare/third_party/uip-1.0/apps" --diag_warning=225 -me --abi=eabi --code_state=16 --ual --preproc_with_compile --preproc_dependency="httpd.pp" $(GEN_OPTS_QUOTED) $(subst #,$(wildcard $(subst $(SPACE),\$(SPACE),$<)),"#")
+	@echo 'Finished building: $<'
+	@echo ' '
+
+startup_ccs.obj: C:/TI/controlSUITE/device_support/f28m35x/v130/F28M35x_examples_Master/enet_uip/m3/startup_ccs.c $(GEN_OPTS) $(GEN_SRCS)
+	@echo 'Building file: $<'
+	@echo 'Invoking: Compiler'
+	"C:/Program Files/Texas Instruments/ccsv4/tools/compiler/tms470/bin/cl470" -mv7M3 -g --gcc --define=ccs --define="_FLASH" --define=PART_LM3S9B96 --include_path="C:/Program Files/Texas Instruments/ccsv4/tools/compiler/tms470/include" --include_path="C:/TI/controlSUITE/device_support/f28m35x/v130/F28M35x_examples_Master/enet_uip/m3" --include_path="C:/TI/controlSUITE/device_support/f28m35x/v130/MWare" --include_path="C:/TI/controlSUITE/device_support/f28m35x/v130/MWare/third_party/uip-1.0" --include_path="C:/TI/controlSUITE/device_support/f28m35x/v130/MWare/third_party/uip-1.0/uip" --include_path="C:/TI/controlSUITE/device_support/f28m35x/v130/MWare/third_party/uip-1.0/apps" --diag_warning=225 -me --abi=eabi --code_state=16 --ual --preproc_with_compile --preproc_dependency="startup_ccs.pp" $(GEN_OPTS_QUOTED) $(subst #,$(wildcard $(subst $(SPACE),\$(SPACE),$<)),"#")
+	@echo 'Finished building: $<'
+	@echo ' '
+
+

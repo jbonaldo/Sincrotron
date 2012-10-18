@@ -1,0 +1,15 @@
+/**
+ * gpio_config.c
+ * 
+ * Rotinas para automatizar a configuração de pinos do DSP como GPIOs
+ * 
+ * Desenvolvidor por:   Jakson Bonaldo
+ * Data:                23/05/2012
+ */
+ 
+ 
+ #include "F28M35x_Gpio.h"
+ 
+ 
+ 
+ 

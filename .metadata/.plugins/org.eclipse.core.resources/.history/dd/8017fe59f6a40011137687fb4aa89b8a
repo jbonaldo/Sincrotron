@@ -1,0 +1,12 @@
+#ifndef GPIO_CONFIG_H_
+#define GPIO_CONFIG_H_
+
+
+#define OUTPUT  0
+#define INPUT   1
+#define GPIO    0
+
+
+void gpio_config(void);
+
+#endif /*GPIO_CONFIG_H_*/

@@ -1,0 +1,5 @@
+# FIXED
+
+app_libs/pwm_config.obj: ../app_libs/pwm_config.c
+
+../app_libs/pwm_config.c: 

@@ -1,0 +1,29 @@
+# FIXED
+
+httpd.obj: C:/TI/controlSUITE/device_support/f28m35x/v130/F28M35x_examples_Master/enet_uip/m3/httpd.c
+httpd.obj: C:/TI/controlSUITE/device_support/f28m35x/v130/MWare/third_party/uip-1.0/uip/uip.h
+httpd.obj: C:/TI/controlSUITE/device_support/f28m35x/v130/MWare/third_party/uip-1.0/uip/uipopt.h
+httpd.obj: C:/TI/controlSUITE/device_support/f28m35x/v130/F28M35x_examples_Master/enet_uip/m3/uip-conf.h
+httpd.obj: C:/TI/controlSUITE/device_support/f28m35x/v130/MWare/third_party/uip-1.0/apps/httpd/httpd.h
+httpd.obj: C:/TI/controlSUITE/device_support/f28m35x/v130/MWare/third_party/uip-1.0/apps/dhcpc/dhcpc.h
+httpd.obj: C:/TI/controlSUITE/device_support/f28m35x/v130/MWare/third_party/uip-1.0/uip/uip_timer.h
+httpd.obj: C:/TI/controlSUITE/device_support/f28m35x/v130/MWare/third_party/uip-1.0/uip/clock.h
+httpd.obj: C:/TI/controlSUITE/device_support/f28m35x/v130/F28M35x_examples_Master/enet_uip/m3/clock-arch.h
+httpd.obj: C:/TI/controlSUITE/device_support/f28m35x/v130/MWare/third_party/uip-1.0/uip/pt.h
+httpd.obj: C:/TI/controlSUITE/device_support/f28m35x/v130/MWare/third_party/uip-1.0/uip/lc.h
+httpd.obj: C:/TI/controlSUITE/device_support/f28m35x/v130/MWare/third_party/uip-1.0/uip/lc-switch.h
+httpd.obj: C:/TI/controlSUITE/device_support/f28m35x/v130/F28M35x_examples_Master/enet_uip/m3/httpd.h
+
+C:/TI/controlSUITE/device_support/f28m35x/v130/F28M35x_examples_Master/enet_uip/m3/httpd.c: 
+C:/TI/controlSUITE/device_support/f28m35x/v130/MWare/third_party/uip-1.0/uip/uip.h: 
+C:/TI/controlSUITE/device_support/f28m35x/v130/MWare/third_party/uip-1.0/uip/uipopt.h: 
+C:/TI/controlSUITE/device_support/f28m35x/v130/F28M35x_examples_Master/enet_uip/m3/uip-conf.h: 
+C:/TI/controlSUITE/device_support/f28m35x/v130/MWare/third_party/uip-1.0/apps/httpd/httpd.h: 
+C:/TI/controlSUITE/device_support/f28m35x/v130/MWare/third_party/uip-1.0/apps/dhcpc/dhcpc.h: 
+C:/TI/controlSUITE/device_support/f28m35x/v130/MWare/third_party/uip-1.0/uip/uip_timer.h: 
+C:/TI/controlSUITE/device_support/f28m35x/v130/MWare/third_party/uip-1.0/uip/clock.h: 
+C:/TI/controlSUITE/device_support/f28m35x/v130/F28M35x_examples_Master/enet_uip/m3/clock-arch.h: 
+C:/TI/controlSUITE/device_support/f28m35x/v130/MWare/third_party/uip-1.0/uip/pt.h: 
+C:/TI/controlSUITE/device_support/f28m35x/v130/MWare/third_party/uip-1.0/uip/lc.h: 
+C:/TI/controlSUITE/device_support/f28m35x/v130/MWare/third_party/uip-1.0/uip/lc-switch.h: 
+C:/TI/controlSUITE/device_support/f28m35x/v130/F28M35x_examples_Master/enet_uip/m3/httpd.h: 

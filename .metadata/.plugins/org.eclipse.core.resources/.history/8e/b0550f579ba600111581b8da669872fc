@@ -1,0 +1,7 @@
+#ifndef PWM_CONFIG_H_
+#define PWM_CONFIG_H_
+
+
+void pwm1_config(void);
+
+#endif /*PWM_CONFIG_H_*/

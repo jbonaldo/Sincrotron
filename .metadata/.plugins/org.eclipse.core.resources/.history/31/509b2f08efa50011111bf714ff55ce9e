@@ -1,0 +1,209 @@
+/**
+ *  Código para DSP F28M35 para controle da fonte 10V-10A
+ * 
+ *  Criado por: Jakson Bonaldo - jbonaldo@gmail.com
+ *  Data:       22/05/2012
+ */
+
+#include "DSP28x_Project.h"     // F28M35x Headerfile Include File
+ #include "app_libs/includes/gpio_config.h"
+
+void interrupts_remap(void);
+void peripheral_init(void);
+void interrupts_enable_periph_ints(void);
+
+
+void main(void)
+{
+    int i;
+// Step 1. Initialize System Control for Control and Analog Subsytems
+// Enable Peripheral Clocks
+// This example function is found in the F28M35x_SysCtrl.c file.
+    InitSysCtrl();
+    
+// If project is linked into flash, copy critical code sections to RAM.    
+//#ifdef _FLASH
+   //memcpy(&RamfuncsRunStart, &RamfuncsLoadStart, (size_t)&RamfuncsLoadSize);
+//   InitFlash();
+//#endif        
+
+ //   EDIS;
+
+    peripheral_init();
+    // Disable CPU interrupts
+    DINT;
+
+    // Initialize the PIE control registers to their default state.
+    // The default state is all PIE interrupts disabled and flags are cleared.
+    InitPieCtrl();
+
+    // Disable CPU interrupts and clear all CPU interrupt flags:
+    IER = 0x0000;
+    IFR = 0x0000;
+
+    InitPieVectTable();
+
+    //interrupts_remap();
+
+    
+
+    //interrupts_enable_periph_ints();
+    
+    EINT;       // Enable Global interrupt INTM
+    ERTM;       // Enable Global realtime interrupt DBGM
+    
+    
+    while(1) 
+    {
+//        GPIO_ACTION(GPIO20, TOGGLE);
+//        for(i=0; i<10000; i++);
+//        GPIO_ACTION(GPIO22, TOGGLE);
+//        for(i=0; i<10000; i++);
+//        //GPIO_ACTION(GPIO28, TOGGLE);  
+        
+        GpioG1DataRegs.GPADAT.bit.GPIO28 = 1;
+        GpioG1DataRegs.GPCDAT.bit.GPIO70 = 0;      
+        for(i=0; i<10000; i++);
+        GpioG1DataRegs.GPADAT.bit.GPIO28 = 0;
+        GpioG1DataRegs.GPCDAT.bit.GPIO70 = 1;
+        for(i=0; i<10000; i++);
+    }
+
+}
+
+
+
+/**
+ * Mapeamento das rotinas que tratam as interrupções.
+ */ 
+void interrupts_remap(void)
+{
+    // Interrupts that are used in this example are re-mapped to
+    // ISR functions found within this file.
+    EALLOW; // This is needed to write to EALLOW protected register
+    //PieVectTable.ADCINT1 = &adc1_isr;
+    EDIS;   // This is needed to disable write to EALLOW protected registers
+}
+
+/**
+ * Inicialização dos periféricos.
+ */ 
+void peripheral_init(void)
+{
+//    EALLOW;
+//    GpioG1CtrlRegs.GPBDIR.bit.GPIO32  = 1;  // Set as output
+//    GpioG1CtrlRegs.GPBMUX1.bit.GPIO32 = 3;  // Select EPWM1SOCA as driving source
+//    GpioG1CtrlRegs.GPBDIR.bit.GPIO33  = 1;  // Set as output
+//    GpioG1CtrlRegs.GPBMUX1.bit.GPIO33 = 3;  // Select EPWM1SOCB as driving source
+//    EDIS;    
+    
+    gpio_config();
+    
+}
+
+/**
+ * Habilita globalmente as interrupções dos periféricos desejados
+ */ 
+void interrupts_enable_periph_ints(void)
+{
+    // Step 5. User specific code, enable interrupts:
+    // Enable ADCINT1 in PIE
+//    PieCtrlRegs.PIEIER1.bit.INTx1 = 1;  // Enable INT 1.1 in the PIE
+//    IER |= M_INT1;                      // Enable CPU Interrupt 1
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#if 0
+#include "DSP28x_Project.h"     // Device Headerfile and Examples Include File
+
+#define C28_FREQ    150         //CPU frequency in MHz
+
+
+void main(void)
+{
+
+   unsigned long delay;
+// Step 1. Initialize System Control:
+// PLL, WatchDog, enable Peripheral Clocks
+// This example function is found in the F28M35x_SysCtrl.c file.
+    InitSysCtrl();
+
+// Step 2. Initialize GPIO:
+// This example function is found in the F28M35x_Gpio.c file and
+// illustrates how to set the GPIO to it's default state.
+    InitGpio(); // Skipped for this example
+    EALLOW;
+    GpioG1CtrlRegs.GPCDIR.bit.GPIO70 = 1; 
+    EDIS;
+    GpioG1DataRegs.GPCDAT.bit.GPIO70 = 1;// turn off LED
+// Step 3. Clear all interrupts and initialize PIE vector table:
+// Disable CPU interrupts
+    DINT;
+
+// Initialize the PIE control registers to their default state.
+// The default state is all PIE interrupts disabled and flags
+// are cleared.
+// This function is found in the F28M35x_PieCtrl.c file.
+    InitPieCtrl();
+
+// Disable CPU interrupts and clear all CPU interrupt flags:
+    IER = 0x0000;
+    IFR = 0x0000;
+
+// Initialize the PIE vector table with pointers to the shell Interrupt
+// Service Routines (ISR).
+// This will populate the entire table, even if the interrupt
+// is not used in this example.  This is useful for debug purposes.
+// The shell ISR routines are found in F28M35x_DefaultIsr.c.
+// This function is found in F28M35x_PieVect.c.
+    InitPieVectTable();
+
+
+
+// Enable global Interrupts and higher priority real-time debug events:
+    EINT;  // Enable Global interrupt INTM
+    ERTM;  // Enable Global realtime interrupt DBGM
+
+// Step 6. IDLE loop. Just sit and loop forever (optional):
+    for(;;)
+    {
+        //
+        // Turn on LED 
+        //
+        GpioG1DataRegs.GPCDAT.bit.GPIO70 = 0;
+        //
+        // Delay for a bit.
+        //
+        for(delay = 0; delay < 2000000; delay++)
+        {
+        }
+        
+        //
+        // Turn off LED
+        //
+        GpioG1DataRegs.GPCDAT.bit.GPIO70 = 1;
+        //
+        // Delay for a bit.
+        //
+        for(delay = 0; delay < 2000000; delay++)
+        {
+        }
+    
+    
+    }
+
+}
+#endif
+

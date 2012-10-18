@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<launchHistory>
+<launch memento="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;no&quot;?&gt;&#13;&#10;&lt;launchConfiguration local=&quot;true&quot; path=&quot;Texas%20Instruments%20XDS100v2%20USB%20Emulator_0%2fC28xx_0.launch&quot;/&gt;&#13;&#10;" mode="debug"/>
+<launch memento="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;no&quot;?&gt;&#13;&#10;&lt;launchConfiguration local=&quot;true&quot; path=&quot;Texas%20Instruments%20XDS100v2%20USB%20Emulator_0%2fCortex_M3_0.launch&quot;/&gt;&#13;&#10;" mode="debug"/>
+<launch memento="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;no&quot;?&gt;&#13;&#10;&lt;launchConfiguration local=&quot;false&quot; path=&quot;/CortexM3/.launches/CortexM3.launch&quot;/&gt;&#13;&#10;" mode="debug"/>
+<launch memento="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;no&quot;?&gt;&#13;&#10;&lt;launchConfiguration local=&quot;false&quot; path=&quot;/DSP_Fonte_10V_10A/.launches/DSP_Fonte_10V_10A.launch&quot;/&gt;&#13;&#10;" mode="debug"/>
+<lastLaunch memento="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;no&quot;?&gt;&#13;&#10;&lt;launchConfiguration local=&quot;true&quot; path=&quot;Texas%20Instruments%20XDS100v2%20USB%20Emulator_0%2fC28xx_0.launch&quot;/&gt;&#13;&#10;" mode="debug"/>
+</launchHistory>

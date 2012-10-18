@@ -1,0 +1,9 @@
+#ifndef PWM_CONFIG_H_
+#define PWM_CONFIG_H_
+
+
+void pwm1_config(void);
+void pwm_config(void);
+void InitEPwm1Gpio(void);
+
+#endif /*PWM_CONFIG_H_*/

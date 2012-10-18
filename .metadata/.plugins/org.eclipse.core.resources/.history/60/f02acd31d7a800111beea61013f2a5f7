@@ -1,0 +1,15 @@
+#ifndef PWM_CONFIG_H_
+#define PWM_CONFIG_H_
+
+
+void pwm1_config(void);
+void pwm_config(void);
+void InitEPwm1Gpio(void);
+
+void pwm_output_enable(void);
+void pwm_output_disable(void);
+
+
+#define TZ_ONE_SHOT     1
+
+#endif /*PWM_CONFIG_H_*/

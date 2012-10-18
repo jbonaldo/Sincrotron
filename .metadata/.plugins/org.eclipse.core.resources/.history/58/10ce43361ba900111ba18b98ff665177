@@ -1,0 +1,30 @@
+################################################################################
+# Automatically-generated file. Do not edit!
+################################################################################
+
+# Add inputs and outputs from these tool invocations to the build variables 
+CMD_SRCS += \
+../F28M35x_Headers_nonBIOS.cmd 
+
+LIB_SRCS += \
+E:/Doutorado/Sincrotron/Implementacao/DSP/F28M35x_common/lib/SFO_TI_Build_V7_FPU.lib 
+
+C_SRCS += \
+../main.c 
+
+OBJS += \
+./main.obj 
+
+C_DEPS += \
+./main.pp 
+
+C_DEPS__QTD += \
+".\main.pp" 
+
+OBJS__QTD += \
+".\main.obj" 
+
+C_SRCS_QUOTED += \
+"../main.c" 
+
+

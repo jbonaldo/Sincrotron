@@ -1,0 +1,36 @@
+################################################################################
+# Automatically-generated file. Do not edit!
+################################################################################
+
+# Add inputs and outputs from these tool invocations to the build variables 
+C_SRCS += \
+C:/TI/controlSUITE/device_support/f28m35x/v130/MWare/third_party/uip-1.0/uip/uip.c \
+C:/TI/controlSUITE/device_support/f28m35x/v130/MWare/third_party/uip-1.0/uip/uip_arp.c \
+C:/TI/controlSUITE/device_support/f28m35x/v130/MWare/third_party/uip-1.0/uip/uip_timer.c 
+
+OBJS += \
+./third_party/uip-1.0/uip/uip.obj \
+./third_party/uip-1.0/uip/uip_arp.obj \
+./third_party/uip-1.0/uip/uip_timer.obj 
+
+C_DEPS += \
+./third_party/uip-1.0/uip/uip.pp \
+./third_party/uip-1.0/uip/uip_arp.pp \
+./third_party/uip-1.0/uip/uip_timer.pp 
+
+C_DEPS__QTD += \
+".\third_party\uip-1.0\uip\uip.pp" \
+".\third_party\uip-1.0\uip\uip_arp.pp" \
+".\third_party\uip-1.0\uip\uip_timer.pp" 
+
+OBJS__QTD += \
+".\third_party\uip-1.0\uip\uip.obj" \
+".\third_party\uip-1.0\uip\uip_arp.obj" \
+".\third_party\uip-1.0\uip\uip_timer.obj" 
+
+C_SRCS_QUOTED += \
+"C:/TI/controlSUITE/device_support/f28m35x/v130/MWare/third_party/uip-1.0/uip/uip.c" \
+"C:/TI/controlSUITE/device_support/f28m35x/v130/MWare/third_party/uip-1.0/uip/uip_arp.c" \
+"C:/TI/controlSUITE/device_support/f28m35x/v130/MWare/third_party/uip-1.0/uip/uip_timer.c" 
+
+
